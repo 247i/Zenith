@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Launchy#API</name>
+    </assembly>
+    <members>
+        <member name="T:LaunchySharp.IPlugin">
+            <summary>
+            An interface for creating a Launchy plugin using the .NET framework.
+            Launchy# will load all DLLs that have a public class which derives from
+            IPlugin.
+            </summary>
+            <remarks>
+            Some simple guidelines for writing plugins:
+            <list type="bullet">
+            <item>The main purpose of most Launchy plugins is to add items of
+            some type the main catalog.</item>
+            <item>The init, getID and getName should be implmeneted by all 
+            plugins. The other methods should be implemented according to the 
+            plugin purpose</item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.init(LaunchySharp.IPluginHost)">
+            <summary>
+            This function informs the plugin that it’s being loaded.
+            This is a good time to do any initialization work, including
+            creating the plugin ID hash value.
+            </summary>
+            <param name="pluginHost">an object for the plugin to interact with 
+            the main program.</param>
+            <example>
+            <code source="DocumentationPlugin.cs" region="init"></code>
+            </example>
+            <seealso cref="T:LaunchySharp.IPluginHost"/>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.getID">
+            <summary>
+            Asks the Plugin for its ID number.
+            </summary>
+            <remarks>
+            Launchy needs an unsigned int identification value for each loaded 
+            plugin. You supply your own here. Typically, this is the result of 
+            hashing a string, as shown in the example below.
+            </remarks>
+            <example>
+            <code source="DocumentationPlugin.cs" region="getID"></code>
+            </example>
+            <returns>The plugin ID number</returns>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.getName">
+            <summary>
+            Asks the plugin for its string name.
+            </summary>
+            <returns>The plugin name</returns>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.getLabels(System.Collections.Generic.List{LaunchySharp.IInputData})">
+            <summary>
+            Asks the plugin if it would like to apply a label to the current 
+            search query.
+            </summary>
+            <remarks>
+            It is sometimes useful to label user queries with plugin-defined 
+            tags. For instance, the weby plugin will tag input that contains 
+            "www" or ".com" or ".net" with the hash value of the string 
+            "HASH_WEBSITE". Then, other plugins that see the query can know 
+            that the current search is for a website.
+            </remarks>
+            <param name="inputDataList">User's search query</param>
+            <example>
+            <code source="DocumentationPlugin.cs" region="getLabels"></code>
+            </example>
+            <seealso cref="T:LaunchySharp.IInputData"/>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.getResults(System.Collections.Generic.List{LaunchySharp.IInputData},System.Collections.Generic.List{LaunchySharp.ICatItem})">
+            <summary>
+            Asks the plugin for any results to a query.
+            </summary>
+            <remarks>
+            If your plugin returns catalog results on the fly to a query (e.g. 
+            a website query for weby or a calculator result), then this is the 
+            place to do so. The existing results are stored in a ResultsList 
+            object, which is a CatItem‘s (short for Catalog Items) list. 
+            You can append your own results to it.
+            </remarks>
+            <param name="inputDataList">User's search query</param>
+            <param name="resultsList">A list of results for this query,
+            you can add your own if relevant.</param>
+            <seealso cref="T:LaunchySharp.IInputData"/>
+            <seealso cref="T:LaunchySharp.ICatItem"/>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.getCatalog(System.Collections.Generic.List{LaunchySharp.ICatItem})">
+            <summary>
+            Asks the plugin for a static catalog to be added to the primary 
+            catalog. Some plugins will add permanent entries to Launchy's 
+            primary catalog (until the catalog is rebuilt).
+            </summary>
+            <param name="catalogItems">An object to append your new entries to 
+            (these will be copied over to the primary catalog).</param>
+            <seealso cref="T:LaunchySharp.ICatItem"/>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.launchItem(System.Collections.Generic.List{LaunchySharp.IInputData},LaunchySharp.ICatItem)">
+            <summary>
+            This method instructs the plugin that one of its own catalog 
+            items was selected by the user and should now be executed.
+            </summary>
+            <remarks>
+            If the plugin adds items to the catalog via getResults() or 
+            getCatalog(), and one of those items is selected by the user, 
+            then it is up to the plugin to execute it when the user presses 
+            "enter". This is where you perform the action. 
+            </remarks>
+            <param name="inputDataList">The user's query</param>
+            <param name="item">The user selected catalog item</param>
+            <seealso cref="T:LaunchySharp.IInputData"/>
+            <seealso cref="T:LaunchySharp.ICatItem"/>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.hasDialog">
+            <summary>
+            Asks the plugin if it has a dialog to display in the options menu.
+            </summary>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.doDialog">
+            <summary>
+            Asks the plugin to create an options window for the Launchy 
+            "Options->Plugins" tab, and return a handle (HWND) to it.
+            </summary>
+            <remarks>
+            This function is called only if hasDialog() returns true.
+            </remarks>
+            <returns>The configuration window handle (HWND).</returns>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.endDialog(System.Boolean)">
+            <summary>
+            Informs the plugin that it should close its dialog.
+            </summary>
+            <param name="acceptedByUser">
+            True if the plugin should accept changes made by the user while
+            the dialog was open.
+            </param>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.launchyShow">
+            <summary>
+            Informs the plugin that Launchy is now visible on the screen.
+            </summary>
+        </member>
+        <member name="M:LaunchySharp.IPlugin.launchyHide">
+            <summary>
+            Informs the plugin that Launchy is no longer visible on the screen.
+            </summary>
+        </member>
+        <member name="T:LaunchySharp.IPluginHost">
+            <summary>
+            Interface for the plugin to interact with the main program.
+            </summary>
+        </member>
+        <member name="M:LaunchySharp.IPluginHost.catItemFactory">
+            <summary>
+            Returns an object that creates CatItem objects.
+            </summary>
+            <returns>An object that creates CatItem objects</returns>
+            <see cref="T:LaunchySharp.ICatItemFactory"/>
+        </member>
+        <member name="M:LaunchySharp.IPluginHost.launchyPaths">
+            <summary>
+            Returns an object that contains information about file system
+            paths.
+            </summary>
+            <returns>An object that contains information about file system
+            paths.</returns>
+            <seealso cref="T:LaunchySharp.ILaunchyPaths"/>
+        </member>
+        <member name="M:LaunchySharp.IPluginHost.hash(System.String)">
+            <summary>
+            Computes a value of a string using the same implmentation as 
+            Launchy.
+            </summary>
+            <param name="str">The string to hash.</param>
+            <remarks>
+            Internally, this function uses the Qt function qHash(), which is
+            the same function used by Launchy.
+            </remarks>
+            <returns>An integer which represents the string.</returns>
+        </member>
+        <member name="T:LaunchySharp.ICatItem">
+            <summary>
+            Interface for a single item in the index.
+            </summary>
+        </member>
+        <member name="M:LaunchySharp.ICatItem.getFullPath">
+            <summary>
+            Returns the full path of the file to execute.
+            </summary>
+            <returns>The full path of the file to execute.</returns>
+        </member>
+        <member name="M:LaunchySharp.ICatItem.getShortName">
+            <summary>
+            Returns the abbreviated name of the indexed item.
+            </summary>
+            <returns>The abbreviated name of the indexed item.</returns>
+        </member>
+        <member name="M:LaunchySharp.ICatItem.getLowName">
+            <summary>
+            The lowercase name of the indexed item.
+            </summary>
+            <returns>The lowercase name of the indexed item.</returns>
+        </member>
+        <member name="M:LaunchySharp.ICatItem.getIconPath">
+            <summary>
+            Returns the path to icon file for the item.
+            </summary>
+            <returns>The path to icon file for the item.</returns>
+        </member>
+        <member name="M:LaunchySharp.ICatItem.getUsage">
+            <summary>
+            Returns how many times this item has been called by the user.
+            </summary>
+            <returns>how many times this item has been called by the user.
+            </returns>
+        </member>
+        <member name="M:LaunchySharp.ICatItem.getID">
+            <summary>
+            Returns the plugin id of the creator of this CatItem (0 for Launchy 
+            itself).
+            </summary>
+            <returns>the plugin id of the creator of this CatItem 
+            (0 for Launchy itself).</returns>
+        </member>
+        <member name="T:LaunchySharp.IInputData">
+            <summary>
+            Interace for a class that stores one segment (between tabs) of a user's 
+            query. The query is typically represented by a List of IInputData, 
+            and each element of the list represents a segment of the query.
+            </summary>
+            <example>
+            For the user query "google |TAB| this is my search", 2 InputData 
+            objects are created. One for "google" and one for "this is my search".
+            </example>
+        </member>
+        <member name="M:LaunchySharp.IInputData.setLabel(System.UInt32)">
+            <summary>
+            Apply a label to this query segment.
+            </summary>
+            <param name="label">Identifier for this query.</param>
+        </member>
+        <member name="M:LaunchySharp.IInputData.hasLabel(System.UInt32)">
+            <summary>
+            Check if it has the given label applied to it.
+            </summary>
+            <param name="label">The label ID to check for.</param>
+            <returns>True if label exists for this query, or false otherwise.
+            </returns>
+        </member>
+        <member name="M:LaunchySharp.IInputData.setID(System.UInt32)">
+            <summary>
+            Set the id of this query.
+            </summary>
+            <param name="id">Identifier for this query.</param>
+        </member>
+        <member name="M:LaunchySharp.IInputData.getID">
+            <summary>
+            Returns the current owner id of the query.
+            </summary>
+            <returns>The current owner id of the query</returns>
+        </member>
+        <member name="M:LaunchySharp.IInputData.getText">
+            <summary>
+            Get the text of the query segment.
+            </summary>
+            <returns>The text of the query segment</returns>
+        </member>
+        <member name="M:LaunchySharp.IInputData.setText(System.String)">
+            <summary>
+            Set the text of the query segment.
+            </summary>
+            <param name="text">The text of the query segment</param>
+        </member>
+        <member name="M:LaunchySharp.IInputData.getTopResult">
+            <summary>
+            Get a pointer to the best catalog match for this segment of the 
+            query.
+            </summary>
+            <returns>The best catalog match for this segment of the query.
+            </returns>
+        </member>
+        <member name="M:LaunchySharp.IInputData.setTopResult(LaunchySharp.ICatItem)">
+            <summary>
+            Change the best catalog match for this segment.
+            </summary>
+            <param name="catItem">The best catalog match for this segment.
+            </param>
+        </member>
+        <member name="T:LaunchySharp.ICatItemFactory">
+            <summary>
+            Interface for classes that create ICatItem objects.
+            </summary>
+            <seealso cref="T:LaunchySharp.ICatItem"/>
+        </member>
+        <member name="M:LaunchySharp.ICatItemFactory.createCatItem(System.String,System.String,System.UInt32,System.String)">
+            <summary>
+            Creates a new CatItem using 4 parameters.
+            </summary>
+            <param name="fullPath">Full path of the file to execute.</param>
+            <param name="shortName">Abbreviated name of the indexed item.</param>
+            <param name="id">Owner ID of the CatItem, should be the result the
+            plugin ID.</param>
+            <param name="iconPath">Icon path</param>
+            <returns>The new CatItem, as a ICatItem reference</returns>
+        </member>
+        <member name="M:LaunchySharp.ICatItemFactory.createCatItem(System.String,System.String,System.UInt32,System.String,System.UInt32)">
+            <summary>
+            Creates a new CatItem using 5 parameters.
+            </summary>
+            <param name="fullPath">Full path of the file to execute.</param>
+            <param name="shortName">Abbreviated name of the indexed item.</param>
+            <param name="id">Owner ID of the CatItem, should be the result the
+            plugin ID.</param>
+            <param name="iconPath">Icon path</param>
+            <param name="usage">Usage count</param>
+            <returns>The new CatItem, as a ICatItem reference</returns>
+        </member>
+        <member name="T:LaunchySharp.ILaunchyPaths">
+            <summary>
+            Returns some file system paths for common directories.
+            </summary>
+        </member>
+        <member name="M:LaunchySharp.ILaunchyPaths.getLaunchyPath">
+            <summary>
+            Returns the path where Launchy.exe resides. 
+            Usually this is C:\Program Files\Launchy.
+            </summary>
+            <returns>The path where Launchy.exe resides.</returns>
+        </member>
+        <member name="M:LaunchySharp.ILaunchyPaths.getIconsPath">
+            <summary>
+            Returns the icons directory for Launchy plugins.
+            Usually this is C:\Program Files\Launchy\plugins\icons.
+            </summary>
+            <returns>The icons directory for Launchy plugins.</returns>
+        </member>
+        <member name="M:LaunchySharp.ILaunchyPaths.getConfigPath">
+            <summary>
+            Returns the Launchy configuration file directory, where 
+            Launchy.ini resides. Usually this is %APPDATA%\Launchy.
+            </summary>
+            <returns>The Launchy configuration directory.</returns>
+        </member>
+    </members>
+</doc>

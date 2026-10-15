@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Storing and retrieving Settings &mdash; pylaunchy v0.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pylaunchy v0.9.0 documentation" href="index.html" />
+    <link rel="up" title="Plugin Developers Documentation" href="devdoc.html" />
+    <link rel="next" title="Debugging scripts" href="debugging.html" />
+    <link rel="prev" title="Simple Plugin Tutorial" href="simple_plugin.html" /> 
+  </head>
+  <body>
+<div class="related">
+<div class="related2">
+<ul>
+<li class="right"><a href="http://sourceforge.net/forum/?group_id=235162">Forums</a></li>
+<li class="right"><a href="http://sourceforge.net/project/showfiles.php?group_id=235162">Downloads</a> | </li>
+<li><a href="index.html">Home</a></li>
+</ul>
+</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="debugging.html" title="Debugging scripts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="simple_plugin.html" title="Simple Plugin Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" accesskey="U">Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="storing-and-retrieving-settings">
+<span id="settings"></span><h1>Storing and retrieving Settings<a class="headerlink" href="#storing-and-retrieving-settings" title="Permalink to this headline">¶</a></h1>
+<p>Settings in PyLaunchy are handled through an exported QSettings
+(see below) object.</p>
+<p>The <tt class="docutils literal"><span class="pre">settings</span></tt> object is availible through <tt class="docutils literal"><span class="pre">launchy.settings</span></tt> and is shared
+amongst all Launchy plugins (even non-python ones).</p>
+<p><tt class="docutils literal"><span class="pre">launchy.settings</span></tt> is a QSettings object from PyQt4.QtCore.
+For more information, see the reference manual.</p>
+<p>The examples in this page are taken from the <a class="reference internal" href="pywebindex.html#pywebindex"><em>PyWebIndex</em></a> plugin.</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference external" href="http://www.riverbankcomputing.co.uk/static/Docs/PyQt4/html/qsettings.html">QSettings</a></dt>
+<dd>Documentation of the QSettings class from PyQt4.</dd>
+</dl>
+</div>
+<div class="section" id="reading-a-value">
+<h2>Reading a value<a class="headerlink" href="#reading-a-value" title="Permalink to this headline">¶</a></h2>
+<p>Read the value of <tt class="docutils literal"><span class="pre">pagesHash</span></tt> from the <tt class="docutils literal"><span class="pre">[PyWebIndex]</span></tt> section in the
+settings file and convert it to string:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">settings</span> <span class="o">=</span> <span class="n">launchy</span><span class="o">.</span><span class="n">settings</span>
+<span class="n">pagesHash</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s">&quot;PyWebIndex/pagesHash&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">toString</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="storing-a-value">
+<h2>Storing a value<a class="headerlink" href="#storing-a-value" title="Permalink to this headline">¶</a></h2>
+<p>Save a the value of <tt class="docutils literal"><span class="pre">__version__</span></tt> (string variable) to the <tt class="docutils literal"><span class="pre">[PyWebIndex]</span></tt>
+section in the settings file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">settings</span> <span class="o">=</span> <span class="n">launchy</span><span class="o">.</span><span class="n">settings</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;PyWebIndex/version&quot;</span><span class="p">,</span> <span class="n">QVariant</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Note the usage of <tt class="docutils literal"><span class="pre">QVariant</span></tt>, QSettings works with objects of this type, so
+it should be used to convert values from Python to QT or vice versa.</p>
+</div>
+<div class="section" id="reading-values-from-an-array">
+<h2>Reading values from an array<a class="headerlink" href="#reading-values-from-an-array" title="Permalink to this headline">¶</a></h2>
+<p>Read all values from the <tt class="docutils literal"><span class="pre">masterPages</span></tt> array in the <tt class="docutils literal"><span class="pre">[PyWebIndex]</span></tt> section
+into a list of tuples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">masterPages</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">beginReadArray</span><span class="p">(</span><span class="s">&quot;PyWebIndex/masterPages&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">setArrayIndex</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="n">masterPages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+       <span class="p">(</span> <span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">toString</span><span class="p">(),</span>
+         <span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s">&quot;url&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">toString</span><span class="p">()</span> <span class="p">)</span>
+    <span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">endArray</span><span class="p">()</span>
+
+<span class="c"># masterPages now contains tuples of (name, url)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="storing-values-in-an-array">
+<h2>Storing values in an array<a class="headerlink" href="#storing-values-in-an-array" title="Permalink to this headline">¶</a></h2>
+<p>The following saves items from a QTableWidget to an array:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">settings</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;PyWebIndex/masterPages&quot;</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">beginWriteArray</span><span class="p">(</span><span class="s">&quot;PyWebIndex/masterPages&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">table</span><span class="o">.</span><span class="n">rowCount</span><span class="p">()):</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">setArrayIndex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">QVariant</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">()))</span>
+    <span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&quot;url&quot;</span><span class="p">,</span> <span class="n">QVariant</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">()))</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">endArray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Storing and retrieving Settings</a><ul>
+<li><a class="reference internal" href="#reading-a-value">Reading a value</a></li>
+<li><a class="reference internal" href="#storing-a-value">Storing a value</a></li>
+<li><a class="reference internal" href="#reading-values-from-an-array">Reading values from an array</a></li>
+<li><a class="reference internal" href="#storing-values-in-an-array">Storing values in an array</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="simple_plugin.html"
+                        title="previous chapter">Simple Plugin Tutorial</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="debugging.html"
+                        title="next chapter">Debugging scripts</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/settings.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="debugging.html" title="Debugging scripts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="simple_plugin.html" title="Simple Plugin Tutorial"
+             >previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" >Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <div class="credit">
+        <a href="http://sourceforge.net"><img border="0" title="Sourceforge.net Logo" alt="Sourceforge.net Logo - logo" src="http://sourceforge.net/sflogo.php?group_id=235162&type=1" style="width: 88px;height: 31px;"/></a>
+        <a href="http://www.python.org/"><img border="0" title="Powered by Python" alt="Powered by Python - logo" src="_static/python-powered-w-70x28.png" style="width: 70px;height: 28px;"/></a>
+      </div>
+      &copy; Copyright 2008, Shahar Kosti.
+      Last updated on Oct 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5448736-1");
+pageTracker._trackPageview();
+</script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+READ THIS FIRST!
+================
+
+If you have Mathyresurrected v0.2.0 or newer instaled, skip to 
+next section for normal instalation instructions. Otherwise, 
+before installing please follow these steps:
+
+1. Exit Launchy
+2. Go to Launchy install directory (usually C:\Program Files\Lanchy)
+3. Delete folloving files:
+		plugins\README.mathyresurrected.txt
+		plugins\mathyresurrected0.dll
+		icons\mathyresurrected.png
+4. Proceed with regular instalation.
+
+INSTALL
+=======
+
+1. Close Launchy
+2. Copy mathyresurrected.dll to your Launchy plugins directory
+3. Store MathyResurrected.pdf for future reference
+4. Start Launchy

@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Simple Plugin Tutorial &mdash; pylaunchy v0.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pylaunchy v0.9.0 documentation" href="index.html" />
+    <link rel="up" title="Plugin Developers Documentation" href="devdoc.html" />
+    <link rel="next" title="Storing and retrieving Settings" href="settings.html" />
+    <link rel="prev" title="Plugin Developers Documentation" href="devdoc.html" /> 
+  </head>
+  <body>
+<div class="related">
+<div class="related2">
+<ul>
+<li class="right"><a href="http://sourceforge.net/forum/?group_id=235162">Forums</a></li>
+<li class="right"><a href="http://sourceforge.net/project/showfiles.php?group_id=235162">Downloads</a> | </li>
+<li><a href="index.html">Home</a></li>
+</ul>
+</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Storing and retrieving Settings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="devdoc.html" title="Plugin Developers Documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" accesskey="U">Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="simple-plugin"></span><div class="section" id="simple-plugin-tutorial">
+<h1>Simple Plugin Tutorial<a class="headerlink" href="#simple-plugin-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This document describes how to write a simple Launchy plugin using pylaunchy.</p>
+<p>This is the simplest plugin you can build that will actually do something.
+The code is taken from the pysimple.py which is distributed with pylaunchy.</p>
+</div>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>Running the plugin is simple:</p>
+<blockquote>
+<ul class="simple">
+<li>Put the pysimple.py file in <tt class="docutils literal"><span class="pre">&lt;Launchy&gt;\plugins\python</span></tt> (Replace <tt class="docutils literal"><span class="pre">&lt;Launchy&gt;</span></tt>
+with your Launchy install path, e.g. <tt class="docutils literal"><span class="pre">C:\Program</span> <span class="pre">Files\Launchy\plugins\python</span></tt>).</li>
+<li>Restart Launchy</li>
+<li>Hit <tt class="kbd docutils literal"><span class="pre">Alt+Space</span></tt></li>
+<li>Type <tt class="docutils literal"><span class="pre">My</span> <span class="pre">simple</span> <span class="pre">plugin</span></tt></li>
+<li>Hit <tt class="kbd docutils literal"><span class="pre">Enter</span></tt></li>
+</ul>
+</blockquote>
+<p>You should see the following image :</p>
+<img alt="_images/pysimple.png" src="_images/pysimple.png" />
+<p>Also, check the file <em>stdout.txt</em> in <tt class="docutils literal"><span class="pre">&lt;Launchy&gt;\plugins\python</span></tt>. It should have the following line -</p>
+<div class="highlight-python"><pre>I was asked to launch:  My simple plugin</pre>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">launchy</span>   <span class="c">### 1</span>
+
+<span class="k">class</span> <span class="nc">PySimple</span><span class="p">(</span><span class="n">launchy</span><span class="o">.</span><span class="n">Plugin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">launchy</span><span class="o">.</span><span class="n">Plugin</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c">### 2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;PySimple&quot;</span>  <span class="c">### 3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hash</span> <span class="o">=</span> <span class="n">launchy</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">icon</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">launchy</span><span class="o">.</span><span class="n">getIconsPath</span><span class="p">(),</span> <span class="s">&quot;pysimple.png&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+        
+    <span class="k">def</span> <span class="nf">getID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash</span>
+
+    <span class="k">def</span> <span class="nf">getName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">getIcon</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">icon</span>
+        
+    <span class="k">def</span> <span class="nf">getLabels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputDataList</span><span class="p">):</span>
+        <span class="k">pass</span>    
+        
+    <span class="k">def</span> <span class="nf">getResults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputDataList</span><span class="p">,</span> <span class="n">resultsList</span><span class="p">):</span>
+        <span class="c"># Take the text from the first input item and add a new</span>
+        <span class="c"># Catalog item with our plugin id</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">inputDataList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getText</span><span class="p">()</span>   <span class="c">### 4</span>
+        <span class="n">resultsList</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">launchy</span><span class="o">.</span><span class="n">CatItem</span><span class="p">(</span><span class="n">text</span><span class="p">,</span>
+            <span class="s">&quot;PySimple: &quot;</span> <span class="o">+</span> <span class="n">text</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">getIcon</span><span class="p">())</span> <span class="p">)</span>   <span class="c">### 5</span>
+        
+    <span class="k">def</span> <span class="nf">getCatalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resultsList</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">launchItem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputDataList</span><span class="p">,</span> <span class="n">catItemOrig</span><span class="p">):</span>
+        <span class="c"># The user chose our catalog item, print it      </span>
+        <span class="n">catItem</span> <span class="o">=</span> <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getTopResult</span><span class="p">()</span>  <span class="c">### 6</span>
+        <span class="k">print</span> <span class="s">&quot;I was asked to launch: &quot;</span><span class="p">,</span> <span class="n">catItem</span><span class="o">.</span><span class="n">fullPath</span>   <span class="c">### 7</span>
+        
+<span class="n">launchy</span><span class="o">.</span><span class="n">registerPlugin</span><span class="p">(</span><span class="n">PySimple</span><span class="p">)</span>   <span class="c">### 8</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="code-explained">
+<h2>Code explained<a class="headerlink" href="#code-explained" title="Permalink to this headline">¶</a></h2>
+<p>The following refer to the <tt class="docutils literal"><span class="pre">###</span> <span class="pre">1</span></tt> comments in the code.</p>
+<blockquote>
+<ol class="arabic simple">
+<li>The <a class="reference internal" href="launchy.html#module-launchy" title="launchy"><tt class="xref py py-mod docutils literal"><span class="pre">launchy</span></tt></a> module contains the required classes and functions for
+writing a Launchy plugin in Python.</li>
+<li><a class="reference internal" href="launchy.html#launchy.Plugin" title="launchy.Plugin"><tt class="xref py py-class docutils literal"><span class="pre">launchy.Plugin</span></tt></a> must be initialized, or your plugin won&#8217;t get loaded.</li>
+<li>The <tt class="docutils literal"><span class="pre">name</span></tt>, <tt class="docutils literal"><span class="pre">hash</span> <span class="pre">ID</span></tt> and <tt class="docutils literal"><span class="pre">icon</span></tt> of the plugin, all required by
+Launchy, are defined for later use. They are returned by functions called by
+Launchy and the plugin itself.</li>
+<li>Text is retrieved from the first input data. This is what the user has
+typed without clicking <tt class="kbd docutils literal"><span class="pre">Tab</span></tt></li>
+<li>A new catalog item is created, containing the user text and some more.
+Note the usage of <tt class="docutils literal"><span class="pre">getID()</span></tt>, it tells Launchy which plugin to use in case
+the user has selected this item.</li>
+<li>Get the best catalog item for the search query.
+See <a class="reference internal" href="launchy.html#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">launchy.InputData</span></tt></a> for more details.</li>
+<li>Print something from the catalog item. Since PyLaunchy has no console to
+write to, the <tt class="docutils literal"><span class="pre">print</span></tt> output can be seen in the file <em>stdout.txt</em>
+in <tt class="docutils literal"><span class="pre">&lt;Launchy&gt;\plugins\python</span></tt></li>
+<li>The plugin class must be registered in order to work.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Simple Plugin Tutorial</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#running">Running</a></li>
+<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#code-explained">Code explained</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="devdoc.html"
+                        title="previous chapter">Plugin Developers Documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="settings.html"
+                        title="next chapter">Storing and retrieving Settings</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/simple_plugin.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Storing and retrieving Settings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="devdoc.html" title="Plugin Developers Documentation"
+             >previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" >Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <div class="credit">
+        <a href="http://sourceforge.net"><img border="0" title="Sourceforge.net Logo" alt="Sourceforge.net Logo - logo" src="http://sourceforge.net/sflogo.php?group_id=235162&type=1" style="width: 88px;height: 31px;"/></a>
+        <a href="http://www.python.org/"><img border="0" title="Powered by Python" alt="Powered by Python - logo" src="_static/python-powered-w-70x28.png" style="width: 70px;height: 28px;"/></a>
+      </div>
+      &copy; Copyright 2008, Shahar Kosti.
+      Last updated on Oct 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5448736-1");
+pageTracker._trackPageview();
+</script>
+  </body>
+</html>

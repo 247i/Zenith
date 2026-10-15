@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>launchy module – API for Launchy plugins &mdash; pylaunchy v0.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pylaunchy v0.9.0 documentation" href="index.html" />
+    <link rel="up" title="Plugin Developers Documentation" href="devdoc.html" />
+    <link rel="next" title="Credits" href="credits.html" />
+    <link rel="prev" title="Debugging scripts" href="debugging.html" /> 
+  </head>
+  <body>
+<div class="related">
+<div class="related2">
+<ul>
+<li class="right"><a href="http://sourceforge.net/forum/?group_id=235162">Forums</a></li>
+<li class="right"><a href="http://sourceforge.net/project/showfiles.php?group_id=235162">Downloads</a> | </li>
+<li><a href="index.html">Home</a></li>
+</ul>
+</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="credits.html" title="Credits"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="debugging.html" title="Debugging scripts"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" accesskey="U">Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="launchy-module-api-for-launchy-plugins">
+<h1><a class="reference internal" href="#module-launchy" title="launchy"><tt class="xref py py-mod docutils literal"><span class="pre">launchy</span></tt></a> module &#8211; API for Launchy plugins<a class="headerlink" href="#launchy-module-api-for-launchy-plugins" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This document is heavily based on Josh Karlin&#8217;s
+<a class="reference external" href="http://www.launchy.net/api2.0/">Launchy 2.0 Plugin API Documentation</a>,
+adapted to PyLaunchy and Python.</p>
+</div>
+<span class="target" id="module-launchy"></span><p>The launchy module provides the required classes and functions for developing a
+Launchy plugin in Python.</p>
+<p>The module contains:
+- <a class="reference internal" href="#launchy.Plugin" title="launchy.Plugin"><tt class="xref py py-class docutils literal"><span class="pre">Plugin</span></tt></a>, represents a Launchy Python plugin
+- <a class="reference internal" href="#launchy.CatItem" title="launchy.CatItem"><tt class="xref py py-class docutils literal"><span class="pre">CatItem</span></tt></a>, a catalog entry
+- <a class="reference internal" href="#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">InputData</span></tt></a>, a user query
+- <a class="reference internal" href="#launchy.ResultsList" title="launchy.ResultsList"><tt class="xref py py-class docutils literal"><span class="pre">ResultsList</span></tt></a>, a list of catalog entries</p>
+<div class="section" id="plugin-interface">
+<h2>Plugin interface<a class="headerlink" href="#plugin-interface" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="launchy.Plugin">
+<em class="property">class </em><tt class="descclassname">launchy.</tt><tt class="descname">Plugin</tt><a class="headerlink" href="#launchy.Plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class represents a Launchy Python plugin. By combining a script that
+has a class that inherits from <a class="reference internal" href="#launchy.Plugin" title="launchy.Plugin"><tt class="xref py py-class docutils literal"><span class="pre">Plugin</span></tt></a> and the <a class="reference internal" href="#module-launchy" title="launchy"><tt class="xref py py-mod docutils literal"><span class="pre">launchy</span></tt></a> 
+module itself, Python scripts can be added to Launchy as real plugins.</p>
+<p>Every plugin needs to be registered using the <a class="reference internal" href="#launchy.registerPlugin" title="launchy.registerPlugin"><tt class="xref py py-func docutils literal"><span class="pre">registerPlugin()</span></tt></a> 
+function.</p>
+<p>Also, every plugin should have the following <tt class="docutils literal"><span class="pre">__init__</span></tt> function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># The most minimal plugin:</span>
+<span class="kn">import</span> <span class="nn">launchy</span>
+<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">launchy</span><span class="o">.</span><span class="n">Plugin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">launchy</span><span class="o">.</span><span class="n">Plugin</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="n">launchy</span><span class="o">.</span><span class="n">registerPlugin</span><span class="p">(</span> <span class="n">MyPlugin</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>The Plugin interface consists of the following functions:</p>
+<dl class="docutils">
+<dt>Basic functions:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#launchy.Plugin.init" title="launchy.Plugin.init"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.init()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.getID" title="launchy.Plugin.getID"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.getID()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.getName" title="launchy.Plugin.getName"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.getName()</span></tt></a></li>
+</ul>
+</dd>
+<dt>Functions that operate on Launchy&#8217;s Catalog.</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#launchy.Plugin.getCatalog" title="launchy.Plugin.getCatalog"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.getCatalog()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.getLabels" title="launchy.Plugin.getLabels"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.getLabels()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.getResults" title="launchy.Plugin.getResults"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.getResults()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.launchItem" title="launchy.Plugin.launchItem"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.launchItem()</span></tt></a></li>
+</ul>
+</dd>
+<dt>GUI functions (warning: still experminetal):</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#launchy.Plugin.hasDialog" title="launchy.Plugin.hasDialog"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.hasDialog()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.doDialog" title="launchy.Plugin.doDialog"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.doDialog()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.endDialog" title="launchy.Plugin.endDialog"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.endDialog()</span></tt></a></li>
+</ul>
+</dd>
+<dt>Event functions:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="#launchy.Plugin.launchyShow" title="launchy.Plugin.launchyShow"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.launchyShow()</span></tt></a></li>
+<li><a class="reference internal" href="#launchy.Plugin.launchyHide" title="launchy.Plugin.launchyHide"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.launchyHide()</span></tt></a></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="launchy.Plugin.doDialog">
+<tt class="descname">doDialog</tt><big>(</big><em>parentWidget</em><big>)</big><a class="headerlink" href="#launchy.Plugin.doDialog" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>parentWidget</strong> (<tt class="docutils literal"><span class="pre">void*</span></tt>) &#8211; The parent widget of all plugin widgets. 
+Call <tt class="docutils literal"><span class="pre">wrapinstance</span></tt> to use it.</li>
+</ul>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><tt class="docutils literal"><span class="pre">void*</span></tt> - The result of <tt class="docutils literal"><span class="pre">unwrapinstance(</span> <span class="pre">myPluginWidget</span> <span class="pre">)</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Tells the plugin that it&#8217;s time to show its user interface. The function 
+should create the widget and return it.</p>
+<ul class="simple">
+<li>The plugin is passed a raw C++ pointer. It should be converted to 
+QWidget by the user with SIP function <tt class="docutils literal"><span class="pre">wrapinstance</span></tt>.</li>
+<li>SIP documentation can be found 
+<a class="reference external" href="http://www.riverbankcomputing.co.uk/static/Docs/sip4/sipref.html">here</a>.</li>
+<li>The creation of plugin widgets should be done with PyQt4.</li>
+<li>PyQt4 Documentation and Tutorial are available from
+<a class="reference external" href="http://wiki.python.org/moin/PyQt4">PythonInfo Wiki</a>.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtGui</span>
+
+<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">launchy</span><span class="o">.</span><span class="n">Plugin</span><span class="p">):</span>
+<span class="c"># ...</span>
+    <span class="k">def</span> <span class="nf">doDialog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parentWidgetPtr</span><span class="p">):</span>
+        <span class="c"># Get the real QWidget</span>
+        <span class="n">parentWidget</span> <span class="o">=</span> <span class="n">wrapinstance</span><span class="p">(</span><span class="n">parentWidgetPtr</span><span class="p">,</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QWidget</span><span class="p">)</span>
+        
+        <span class="c"># self.widget was initialized to None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">:</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        
+        <span class="c"># MyPluginWidget inherits from QtGui.QWidget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">MyPluginWidget</span><span class="p">(</span><span class="n">parentWidget</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">unwrapinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widget</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.endDialog">
+<tt class="descname">endDialog</tt><big>(</big><em>accept</em><big>)</big><a class="headerlink" href="#launchy.Plugin.endDialog" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>accept</strong> (<em>bool</em>) &#8211; Whether the plugin should accept changes made by the 
+user while the dialog was open</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Informs the plugin that it should close its dialog.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.getCatalog">
+<tt class="descname">getCatalog</tt><big>(</big><em>resultsList</em><big>)</big><a class="headerlink" href="#launchy.Plugin.getCatalog" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>resultsList</strong> &#8211; A <a class="reference internal" href="#launchy.ResultsList" title="launchy.ResultsList"><tt class="xref py py-class docutils literal"><span class="pre">ResultsList</span></tt></a> object to append your new 
+entries to (these will be copied over to the primary catalog).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Asks the plugin for a static catalog to be added to the primary 
+catalog. Some plugins will add permanent entries to Launchy&#8217;s 
+primary catalog (until the catalog is rebuilt).</p>
+<p>For example, the pygo-y plugin adds two items to the catalog: 
+&#8220;Go&#8221; and &#8220;Focus&#8221;. These will be used later on to determine that
+the user is typing a pygo-y query.</p>
+<p>The following code is from pygo-y:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">getCatalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resultsList</span><span class="p">):</span>
+    <span class="n">resultsList</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">launchy</span><span class="o">.</span><span class="n">CatItem</span><span class="p">(</span> 
+        <span class="s">&quot;Go.go-y&quot;</span><span class="p">,</span> <span class="s">&quot;Go&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">getIcon</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
+    <span class="n">resultsList</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">launchy</span><span class="o">.</span><span class="n">CatItem</span><span class="p">(</span> 
+        <span class="s">&quot;Focus.go-y&quot;</span><span class="p">,</span> <span class="s">&quot;Focus&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">getIcon</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.getID">
+<tt class="descname">getID</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.Plugin.getID" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<p>Asks the Plugin for its ID Number.</p>
+<p>Launchy needs an unsigned int identification value for each loaded plugin. You supply your own here. Typically, this is the result of hashing a string, as shown in the example below.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">getID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">launchy</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s">&quot;TestPlugin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Warning - Because we&#8217;re hashing strings to integers.. it is theoretically possible that two plugin names will collide to the same plugin id.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.getLabels">
+<tt class="descname">getLabels</tt><big>(</big><em>inputDataList</em><big>)</big><a class="headerlink" href="#launchy.Plugin.getLabels" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inputDataList</strong> (List of <a class="reference internal" href="#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">InputData</span></tt></a>) &#8211; User&#8217;s search query</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Asks the plugin if it would like to apply a label to the current search query.</p>
+<p>It is sometimes useful to label user queries with plugin-defined tags. For instance, the weby plugin will tag input that contains &#8220;www&#8221; or &#8221;.com&#8221; or &#8221;.net&#8221; with the hash value of the string &#8220;HASH_WEBSITE&#8221;. Then, other plugins that see the query can know that the current search is for a website.</p>
+<p>The <a class="reference internal" href="#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">InputData</span></tt></a> class stores the current user&#8217;s query. It is in a List structure because each time &#8220;tab&#8221; is pressed by the user a new <a class="reference internal" href="#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">InputData</span></tt></a> is formed and appended to the list. In other words, if the user typed &#8220;google &lt;tab&gt; this is my query&#8221; then <em>inputDataList</em> would represent a list of 2 <a class="reference internal" href="#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">InputData</span></tt></a> classes, with the first representing &#8220;google&#8221;, and the second, &#8220;this is my query&#8221;. Each <a class="reference internal" href="#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">InputData</span></tt></a> can be tagged individually.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">getLabels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputDataList</span><span class="p">):</span>
+   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inputDataList</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+       <span class="k">return</span>
+
+   <span class="c"># Apply a &quot;website&quot; label if we think it&#39;s a website</span>
+   <span class="n">text</span> <span class="o">=</span> <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getText</span><span class="p">();</span>
+
+   <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;http://&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+       <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">setLabel</span><span class="p">(</span><span class="n">HASH_WEBSITE</span><span class="p">);</span>
+   <span class="k">elif</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;https://&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+       <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">setLabel</span><span class="p">(</span><span class="n">HASH_WEBSITE</span><span class="p">);</span>
+   <span class="k">elif</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;.com&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span> 
+       <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">setLabel</span><span class="p">(</span><span class="n">HASH_WEBSITE</span><span class="p">);</span>
+   <span class="k">elif</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;.net&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+       <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">setLabel</span><span class="p">(</span><span class="n">HASH_WEBSITE</span><span class="p">);</span>
+   <span class="k">elif</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;.org&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+       <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">setLabel</span><span class="p">(</span><span class="n">HASH_WEBSITE</span><span class="p">);</span>
+   <span class="k">elif</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;www.&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+       <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">setLabel</span><span class="p">(</span><span class="n">HASH_WEBSITE</span><span class="p">);</span>  
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Warning - This is called each time the user changes a character in his or her query, so make sure it&#8217;s fast.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.getName">
+<tt class="descname">getName</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.Plugin.getName" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>Asks the plugin for its string name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.getResults">
+<tt class="descname">getResults</tt><big>(</big><em>inputDataList</em>, <em>resultsList</em><big>)</big><a class="headerlink" href="#launchy.Plugin.getResults" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the plugin for any results to a query.</p>
+<p>If your plugin returns catalog results on the fly to a query (e.g. a website query for weby or a calculator result), then this is the place to do so. The existing results are stored in a <a class="reference internal" href="#launchy.ResultsList" title="launchy.ResultsList"><tt class="xref py py-class docutils literal"><span class="pre">ResultsList</span></tt></a> object, which is a <a class="reference internal" href="#launchy.CatItem" title="launchy.CatItem"><tt class="xref py py-class docutils literal"><span class="pre">CatItem</span></tt></a>&#8216;s (short for Catalog Items) list. You can append your own results to it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.hasDialog">
+<tt class="descname">hasDialog</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.Plugin.hasDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asks the plugin if it has a dialog to display in the 
+options menu.</p>
+<p>Return <tt class="docutils literal"><span class="pre">true</span></tt> if the plugin has a dialog, or <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.init">
+<tt class="descname">init</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.Plugin.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>This message informs the plugin that it&#8217;s being loaded.</p>
+<p>This is a good time to do any initialization work.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.launchItem">
+<tt class="descname">launchItem</tt><big>(</big><em>inputDataList</em>, <em>catItem</em><big>)</big><a class="headerlink" href="#launchy.Plugin.launchItem" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>inputDataList</strong> (List of <a class="reference internal" href="#launchy.InputData" title="launchy.InputData"><tt class="xref py py-class docutils literal"><span class="pre">InputData</span></tt></a>) &#8211; User&#8217;s search query</li>
+<li><strong>catItem</strong> (<a class="reference internal" href="#launchy.CatItem" title="launchy.CatItem"><tt class="xref py py-class docutils literal"><span class="pre">CatItem</span></tt></a>) &#8211; The user selected catalog item</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>instructs the plugin that one of its own catalog items was selected by 
+the user and should now be executed.</p>
+<p>If the plugin adds items to the catalog via <a class="reference internal" href="#launchy.Plugin.getResults" title="launchy.Plugin.getResults"><tt class="xref py py-meth docutils literal"><span class="pre">getResults()</span></tt></a> 
+or <a class="reference internal" href="#launchy.Plugin.getCatalog" title="launchy.Plugin.getCatalog"><tt class="xref py py-meth docutils literal"><span class="pre">getCatalog()</span></tt></a> and one of those items is selected by the user, 
+then it is up to the plugin to execute it when the user presses &#8220;enter&#8221;. 
+This is where you perform the action.</p>
+<p>The following code is from pygo-y:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">launchItem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputDataList</span><span class="p">,</span> <span class="n">catItemOrig</span><span class="p">):</span>
+    <span class="n">catItem</span> <span class="o">=</span> <span class="n">inputDataList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getTopResult</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">window</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">topLevelWindows</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">catItem</span><span class="o">.</span><span class="n">shortName</span> <span class="o">==</span> <span class="n">window</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_goToWindow</span><span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">break</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Notes for the code above:</dt>
+<dd><ol class="first last arabic simple">
+<li>At first, the function gets the user selected window name by 
+calling <a class="reference internal" href="#launchy.InputData.getTopResult" title="launchy.InputData.getTopResult"><tt class="xref py py-meth docutils literal"><span class="pre">InputData.getTopResult()</span></tt></a>.</li>
+<li>Then it searches the window name by using <tt class="docutils literal"><span class="pre">catItem.shortName</span></tt> 
+that was created in pygo-y&#8217;s <a class="reference internal" href="#launchy.Plugin.getResults" title="launchy.Plugin.getResults"><tt class="xref py py-meth docutils literal"><span class="pre">getResults()</span></tt></a>.</li>
+<li>When the window is found, the <tt class="docutils literal"><span class="pre">self._goToWindow()</span></tt> method 
+does the actual work of activating the window.</li>
+</ol>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.launchyHide">
+<tt class="descname">launchyHide</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.Plugin.launchyHide" title="Permalink to this definition">¶</a></dt>
+<dd><p>This message informs the plugin that Launchy is no longer visible 
+on the screen.</p>
+<p>Note: this function will not be called if another plugin function has 
+not returned yet (e.g. Launchy is hidden in the middle of 
+<a class="reference internal" href="#launchy.Plugin.launchItem" title="launchy.Plugin.launchItem"><tt class="xref py py-meth docutils literal"><span class="pre">launchItem()</span></tt></a>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.Plugin.launchyShow">
+<tt class="descname">launchyShow</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.Plugin.launchyShow" title="Permalink to this definition">¶</a></dt>
+<dd><p>This message informs the plugin that Launchy is now visible on the screen.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="launchy.registerPlugin">
+<tt class="descclassname">launchy.</tt><tt class="descname">registerPlugin</tt><big>(</big><em>pluginClass</em><big>)</big><a class="headerlink" href="#launchy.registerPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pluginClass</strong> (<em>launchy.Plugin child</em>) &#8211; Class type of your plugin.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Adds a new plugin type, that will be created later on.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">launchy</span>
+<span class="k">class</span> <span class="nc">MyPlugin</span><span class="p">(</span><span class="n">launchy</span><span class="o">.</span><span class="n">Plugin</span><span class="p">):</span>
+    <span class="k">pass</span> <span class="c"># Real plugin code should come here</span>
+<span class="n">launchy</span><span class="o">.</span><span class="n">registerPlugin</span><span class="p">(</span> <span class="n">MyPlugin</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="launchy.hash">
+<tt class="descclassname">launchy.</tt><tt class="descname">hash</tt><big>(</big><em>str</em><big>)</big><a class="headerlink" href="#launchy.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a hash number of a string.</p>
+<p>This is a wrapper of 
+<a class="reference external" href="http://doc.trolltech.com/4.4/qhash.html">QT&#8217;s qHash</a> function.</p>
+<p>Use this function in your <a class="reference internal" href="#launchy.Plugin.getID" title="launchy.Plugin.getID"><tt class="xref py py-meth docutils literal"><span class="pre">Plugin.getID()</span></tt></a> function or for 
+labels in <a class="reference internal" href="#launchy.InputData.setLabel" title="launchy.InputData.setLabel"><tt class="xref py py-meth docutils literal"><span class="pre">InputData.setLabel()</span></tt></a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">getID</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">launchy</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s">&quot;TestPlugin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="launchy.getLaunchyPath">
+<tt class="descclassname">launchy.</tt><tt class="descname">getLaunchyPath</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.getLaunchyPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the path to Launchy&#8217;s executable directory.</p>
+<p>For example: <tt class="docutils literal"><span class="pre">C:\Program</span> <span class="pre">Files\Launchy</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="launchy.getScriptsPath">
+<tt class="descclassname">launchy.</tt><tt class="descname">getScriptsPath</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.getScriptsPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the path to PyLaunchy&#8217;s scripts directory.</p>
+<p>For example: <tt class="docutils literal"><span class="pre">C:\Program</span> <span class="pre">Files\Launchy\plugins\python</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="launchy.getIconsPath">
+<tt class="descclassname">launchy.</tt><tt class="descname">getIconsPath</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.getIconsPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the path to Launchy&#8217;s icons directory.</p>
+<p>For example: <tt class="docutils literal"><span class="pre">C:\Program</span> <span class="pre">Files\Launchy\plugins\icons</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="launchy.runProgram">
+<tt class="descclassname">launchy.</tt><tt class="descname">runProgram</tt><big>(</big><em>file</em>, <em>args</em><big>)</big><a class="headerlink" href="#launchy.runProgram" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> &#8211; The location of the file to run</li>
+<li><strong>args</strong> &#8211; The arguments to the command</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A convienience run function.</p>
+<p>This function will run the program along with arguments and is platform 
+independent.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="catitem">
+<h3>CatItem<a class="headerlink" href="#catitem" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="launchy.CatItem">
+<em class="property">class </em><tt class="descclassname">launchy.</tt><tt class="descname">CatItem</tt><big>(</big><em>fullPath</em>, <em>shortName</em>, <em>id</em>, <em>iconPath</em><big>)</big><a class="headerlink" href="#launchy.CatItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>CatItem (Catalog Item) - stores a single item in the index.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">resultsList</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">launchy</span><span class="o">.</span><span class="n">CatItem</span><span class="p">(</span><span class="n">text</span><span class="p">,</span>
+     <span class="s">&quot;PySimple: &quot;</span> <span class="o">+</span> <span class="n">text</span><span class="p">,</span>
+     <span class="bp">self</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">getIcon</span><span class="p">())</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Class attributes:</p>
+<dl class="attribute">
+<dt id="launchy.CatItem.fullPath">
+<tt class="descname">fullPath</tt><a class="headerlink" href="#launchy.CatItem.fullPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full path of the file to execute</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="launchy.CatItem.shortName">
+<tt class="descname">shortName</tt><a class="headerlink" href="#launchy.CatItem.shortName" title="Permalink to this definition">¶</a></dt>
+<dd><p>The abbreviated name of the indexed item.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="launchy.CatItem.lowName">
+<tt class="descname">lowName</tt><a class="headerlink" href="#launchy.CatItem.lowName" title="Permalink to this definition">¶</a></dt>
+<dd><p>The lowercase name of the indexed item.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="launchy.CatItem.icon">
+<tt class="descname">icon</tt><a class="headerlink" href="#launchy.CatItem.icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>A path to an icon for the item.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="launchy.CatItem.usage">
+<tt class="descname">usage</tt><a class="headerlink" href="#launchy.CatItem.usage" title="Permalink to this definition">¶</a></dt>
+<dd><p>How many times this item has been called by the user.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="launchy.CatItem.id">
+<tt class="descname">id</tt><a class="headerlink" href="#launchy.CatItem.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The plugin id of the creator of this CatItem (0 for Launchy itself).</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is usually a good idea to append &#8221;.your_plugin_name&#8221; 
+to the end of the full parameter so that there are not multiple 
+items in the index with the same full path.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="inputdata">
+<h3>InputData<a class="headerlink" href="#inputdata" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="launchy.InputData">
+<em class="property">class </em><tt class="descclassname">launchy.</tt><tt class="descname">InputData</tt><a class="headerlink" href="#launchy.InputData" title="Permalink to this definition">¶</a></dt>
+<dd><p>InputData shows one segment (between tabs) of a user&#8217;s query. 
+A user&#8217;s query is typically represented by List&lt;InputData&gt; and 
+each element of the list represents a segment of the query.</p>
+<p>E.g. query = &#8220;google &lt;tab&gt; this is my search&#8221; will have 2 InputData segments 
+in the list. One for &#8220;google&#8221; and one for &#8220;this is my search&#8221;</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This class cannot be created from Python, you can only get an 
+instance of it.</p>
+</div>
+<dl class="method">
+<dt id="launchy.InputData.getId">
+<tt class="descname">getId</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.InputData.getId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current owner id of the query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.getLabels">
+<tt class="descname">getLabels</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.InputData.getLabels" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body">List of integers</td>
+</tr>
+</tbody>
+</table>
+<p>Get the labels associated with this query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.getText">
+<tt class="descname">getText</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.InputData.getText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the text of the query segment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.getTopResult">
+<tt class="descname">getTopResult</tt><big>(</big><big>)</big><a class="headerlink" href="#launchy.InputData.getTopResult" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#launchy.CatItem" title="launchy.CatItem"><tt class="xref py py-class docutils literal"><span class="pre">CatItem</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>Get a the best catalog match for this segment of the query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.hasLabel">
+<tt class="descname">hasLabel</tt><big>(</big><em>labelHashId</em><big>)</big><a class="headerlink" href="#launchy.InputData.hasLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if it has the given label applied to it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.setID">
+<tt class="descname">setID</tt><big>(</big><em>hashId</em><big>)</big><a class="headerlink" href="#launchy.InputData.setID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the id of this query.</p>
+<p>This can be used to override the owner of the selected catalog item, 
+so that no matter what item is chosen from the catalog, the given 
+plugin will be the one to execute it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.setLabel">
+<tt class="descname">setLabel</tt><big>(</big><em>labelHashId</em><big>)</big><a class="headerlink" href="#launchy.InputData.setLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a label to this query segment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.setText">
+<tt class="descname">setText</tt><big>(</big><em>text</em><big>)</big><a class="headerlink" href="#launchy.InputData.setText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the text of the query segment.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.InputData.setTopResult">
+<tt class="descname">setTopResult</tt><big>(</big><em>catItem</em><big>)</big><a class="headerlink" href="#launchy.InputData.setTopResult" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>catItem</strong> &#8211; <a class="reference internal" href="#launchy.CatItem" title="launchy.CatItem"><tt class="xref py py-class docutils literal"><span class="pre">CatItem</span></tt></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Change the best catalog match for this segment.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="resultslist">
+<h3>ResultsList<a class="headerlink" href="#resultslist" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="launchy.ResultsList">
+<em class="property">class </em><tt class="descclassname">launchy.</tt><tt class="descname">ResultsList</tt><a class="headerlink" href="#launchy.ResultsList" title="Permalink to this definition">¶</a></dt>
+<dd><p>ResultsList holds the catalog items that are relevent to a search query.</p>
+<p>Plugins that want to add new catalog items for a search query should use
+this class -</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">getResults</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputDataList</span><span class="p">,</span> <span class="n">resultsList</span><span class="p">):</span>
+   <span class="n">resultsList</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">launchy</span><span class="o">.</span><span class="n">CatItem</span><span class="p">(</span><span class="n">text</span><span class="p">,</span>
+      <span class="s">&quot;PySimple: &quot;</span> <span class="o">+</span> <span class="n">text</span><span class="p">,</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">getID</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">getIcon</span><span class="p">())</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Implemenatation:</strong> This is a thin wrapper for QList&lt;CatItem&gt;</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This class cannot be created from Python, you can only get an 
+instance of it.</p>
+</div>
+<dl class="method">
+<dt id="launchy.ResultsList.append">
+<tt class="descname">append</tt><big>(</big><em>catItem</em><big>)</big><a class="headerlink" href="#launchy.ResultsList.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a catalog item to the end of the results list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.ResultsList.prepend">
+<tt class="descname">prepend</tt><big>(</big><em>catItem</em><big>)</big><a class="headerlink" href="#launchy.ResultsList.prepend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a catalog item to the begining of the results list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.ResultsList.push_back">
+<tt class="descname">push_back</tt><big>(</big><em>catItem</em><big>)</big><a class="headerlink" href="#launchy.ResultsList.push_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a catalog item to the end of the results list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="launchy.ResultsList.push_front">
+<tt class="descname">push_front</tt><big>(</big><em>catItem</em><big>)</big><a class="headerlink" href="#launchy.ResultsList.push_front" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a catalog item to the begining of the results list.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">launchy</span></tt> module &#8211; API for Launchy plugins</a><ul>
+<li><a class="reference internal" href="#plugin-interface">Plugin interface</a></li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a><ul>
+<li><a class="reference internal" href="#catitem">CatItem</a></li>
+<li><a class="reference internal" href="#inputdata">InputData</a></li>
+<li><a class="reference internal" href="#resultslist">ResultsList</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="debugging.html"
+                        title="previous chapter">Debugging scripts</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="credits.html"
+                        title="next chapter">Credits</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/launchy.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="credits.html" title="Credits"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="debugging.html" title="Debugging scripts"
+             >previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" >Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <div class="credit">
+        <a href="http://sourceforge.net"><img border="0" title="Sourceforge.net Logo" alt="Sourceforge.net Logo - logo" src="http://sourceforge.net/sflogo.php?group_id=235162&type=1" style="width: 88px;height: 31px;"/></a>
+        <a href="http://www.python.org/"><img border="0" title="Powered by Python" alt="Powered by Python - logo" src="_static/python-powered-w-70x28.png" style="width: 70px;height: 28px;"/></a>
+      </div>
+      &copy; Copyright 2008, Shahar Kosti.
+      Last updated on Oct 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5448736-1");
+pageTracker._trackPageview();
+</script>
+  </body>
+</html>

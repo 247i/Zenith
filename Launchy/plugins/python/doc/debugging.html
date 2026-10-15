@@ -1,0 +1,163 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Debugging scripts &mdash; pylaunchy v0.9.0 documentation</title>
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pylaunchy v0.9.0 documentation" href="index.html" />
+    <link rel="up" title="Plugin Developers Documentation" href="devdoc.html" />
+    <link rel="next" title="launchy module – API for Launchy plugins" href="launchy.html" />
+    <link rel="prev" title="Storing and retrieving Settings" href="settings.html" /> 
+  </head>
+  <body>
+<div class="related">
+<div class="related2">
+<ul>
+<li class="right"><a href="http://sourceforge.net/forum/?group_id=235162">Forums</a></li>
+<li class="right"><a href="http://sourceforge.net/project/showfiles.php?group_id=235162">Downloads</a> | </li>
+<li><a href="index.html">Home</a></li>
+</ul>
+</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="launchy.html" title="launchy module – API for Launchy plugins"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Storing and retrieving Settings"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" accesskey="U">Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="debugging-scripts">
+<span id="debugging"></span><h1>Debugging scripts<a class="headerlink" href="#debugging-scripts" title="Permalink to this headline">¶</a></h1>
+<p>PyLaunchy is an embedded Python environment, which means you have no
+console output. In general, there are two ways to debug:</p>
+<ol class="arabic">
+<li><p class="first">Logging with <tt class="docutils literal"><span class="pre">print</span></tt> statements or with the <a class="reference external" href="http://docs.python.org/lib/module-logging.html">Python logging module</a>.
+For example, the following script will print a line which can be seen in
+<tt class="docutils literal"><span class="pre">plugins/python/stdout.txt</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">launchy</span>
+<span class="k">print</span> <span class="s">&quot;I was printed from python!&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Using Winpdb and <a class="reference external" href="http://winpdb.org/?page_id=9">Embedded Debugging</a>.
+For example, the following script will halt Launchy and wait for
+Winpdb to attach:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">rpdb2</span><span class="p">;</span> <span class="n">rpdb2</span><span class="o">.</span><span class="n">start_embedded_debugger</span><span class="p">(</span><span class="s">&quot;mypassword&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">launchy</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="settings.html"
+                        title="previous chapter">Storing and retrieving Settings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="launchy.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">launchy</span></tt> module &#8211; API for Launchy plugins</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/debugging.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="launchy.html" title="launchy module – API for Launchy plugins"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="settings.html" title="Storing and retrieving Settings"
+             >previous</a> |</li>
+        <li><a href="index.html">pylaunchy v0.9.0 documentation</a> &raquo;</li>
+          <li><a href="devdoc.html" >Plugin Developers Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      <div class="credit">
+        <a href="http://sourceforge.net"><img border="0" title="Sourceforge.net Logo" alt="Sourceforge.net Logo - logo" src="http://sourceforge.net/sflogo.php?group_id=235162&type=1" style="width: 88px;height: 31px;"/></a>
+        <a href="http://www.python.org/"><img border="0" title="Powered by Python" alt="Powered by Python - logo" src="_static/python-powered-w-70x28.png" style="width: 70px;height: 28px;"/></a>
+      </div>
+      &copy; Copyright 2008, Shahar Kosti.
+      Last updated on Oct 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+    </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5448736-1");
+pageTracker._trackPageview();
+</script>
+  </body>
+</html>
