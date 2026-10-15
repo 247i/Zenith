@@ -6,6 +6,3 @@
 *.log.*
 /Launchy/plugins/icons/tasky
 /Asuite/cache
-
-*.*
-**/
