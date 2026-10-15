@@ -1,4 +1,3 @@
-
 .DS_Store
 *.log
 *.sqbck
@@ -6,3 +5,5 @@
 *.log.*
 /Launchy/plugins/icons/tasky
 /Asuite/cache
+*.*
+**/
