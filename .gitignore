@@ -6,3 +6,5 @@
 *.log.*
 Launchy/launchy.db
 Launchy/history.db
+Launchy/Launchy.ini
+/Launchy/plugins/icons/tasky
