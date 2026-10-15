@@ -3,7 +3,7 @@
 *.sqbck
 *.sqlite
 *.log.*
-/Launchy/plugins/icons/tasky
-/Asuite/cache
-*.*
-**/
+/X11/Launchy/plugins/icons/tasky
+/X11/Asuite/cache
+# *.*
+# **/
