@@ -9,6 +9,8 @@ git clone --depth 1 https://github.com/247i/CS.Net
 git clone --depth 1 https://github.com/247i/Find
 Rem git clone --depth 1 https://github.com/247i/Games
 git clone --depth 1 https://github.com/247i/IDLE
+git clone --depth 1 https://github.com/247i/VSCode IDLE\t\VSCode
+git clone --depth 1 https://github.com/247i/VSCodium IDLE\t\VSCodium
 Rem extract IDLE\t\pandoc.7z
 Rem extract Idle\t\VSCodium\VSCodium.7z
 Rem extract Idle\t\VSCode.7z
