@@ -5,5 +5,5 @@
 *.log.*
 /X11/Launchy/plugins/icons/tasky
 /X11/Asuite/cache
-*.*
-**/
+# *.*
+# **/

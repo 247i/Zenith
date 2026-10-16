@@ -1,0 +1,36 @@
+[skinvalues]
+
+skintype=scale
+
+; Main input field and window
+fontsize=17
+fontbold=0
+fontname=tahoma
+textcolor=#3CBAD9
+textbackcolor=#171b1d
+titletextcolor=#256e7f
+inputwindowcolor=#595959
+
+; Icon to show when no input
+icondefault=scale_dark.ico
+
+; List colors
+listfocusbgcolor=#233343
+listtitlecolor=#37637C
+windowcolor=#393939
+
+; Optional button in input to open/close list, not many use this, color it, but hide it
+buttonarrowcolor=#2e353a
+buttonoutlinecolor=#2e353a
+buttonfillcolor=#171b1d
+showcombo=0
+
+; In case you want to skin the background of the input/list with a tile image, use these two properties. Image format: bmp, png or jpg
+;skintilepicture=mytileimage.bmp
+;listtilepicture=mytileimage.bmp
+
+; In case you want wider borders
+;bordersizewindow=2
+;bordersizelist=2
+
+;by Martin Bresson 07-Sep-2025

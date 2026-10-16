@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="flowlauncher_plugin_url_open_url">פתח כתובת URL: {0}</system:String>
+    <system:String x:Key="flowlauncher_plugin_url_cannot_open_url">לא ניתן לפתוח כתובת URL: {0}</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_url_plugin_name">כתובת URL</system:String>
+    <system:String x:Key="flowlauncher_plugin_url_plugin_description">פתח את כתובת ה-URL שהוזנה מתוך Flow Launcher</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_url_plugin_choose">בחר</system:String>
+    <system:String x:Key="flowlauncher_plugin_url_plugin_filter">יישומים (*.exe)|*.exe|כל הקבצים|*.*</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_url_use_custom_browser">השתמש בדפדפן מותאם אישית במקום בדפדפן ברירת המחדל של Flow Launcher</system:String>
+    <system:String x:Key="flowlauncher_plugin_url_browser_path">נתיב הדפדפן</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_url_new_tab">כרטיסייה חדשה</system:String>
+    <system:String x:Key="flowlauncher_plugin_url_new_window">חלון חדש</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_url_private_mode">מצב פרטי</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_url_usehttps">העדף https על פני http</system:String>
+</ResourceDictionary>

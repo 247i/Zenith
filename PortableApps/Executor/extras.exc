@@ -1,0 +1,278 @@
+[main]
+description=Additional keywords that are not part of the default keywords or were modified
+
+[W]
+keywords=pasteprev
+command=$PASTE2$
+comment=Paste second text in clipboard CTRL+ALT+V
+key=86
+keymod=6
+
+[W]
+keywords=pastethird
+command=$PASTE3$
+comment=Paste third text in clipboard SHIRT+CTRL+ALT+V
+key=86
+keymod=7
+
+[W]
+keywords=random
+command=$RANDOM$
+comment=Return a random number from 0 to X-1, parameter is X
+param=$P$
+
+[W]
+keywords=getmousepos
+command=$GETMOUSEPOS$
+comment=Get the x,y position of the mouse cursor
+
+[W]
+keywords=setmousepos
+command=$SETMOUSEPOS$
+comment=Set mouse screen position [x,y]
+
+[W]
+keywords=mouseclick
+command=$MOUSECLICK$
+comment=Do a left mouse click at [x,y] screen position
+
+[W]
+keywords=mouserightclick
+command=$MOUSERIGHTCLICK$
+comment=Do a right mouse click at [x,y] screen position
+
+[W]
+keywords=getmouseposcolor
+command=$GETMOUSEPOSCOLOR$
+comment=Get RGB color code at mouse cursor position (no param) or [x,y] position
+
+[W]
+keywords=history
+command=$HISTORY$
+comment=Only list history items, fuzzy search with parameter
+
+[W]
+keywords=autohide
+command=$SETAUTOHIDE$
+comment=Toggles auto-hide setting [on,off,?,(empty=toggle)]
+param=$P$
+
+[W]
+keywords=autocenter
+command=$SETAUTOCENTER$
+comment=Toggles auto-center setting [on,off,?,(empty=toggle)]
+param=$P$
+
+[W]
+keywords=lockwindow
+command=$SETLOCKWINDOW$
+comment=Toggles lock window position and size setting [on,off,?,(empty=toggle)]
+param=$P$
+
+[W]
+keywords=stayontop
+command=$SETSTAYONTOP$
+comment=Toggles window stay on top setting [on,off,?,(empty=toggle)]
+param=$P$
+
+[W]
+keywords=holdtext
+command=$HOLDTEXT$
+comment=Toggles hold text [on,off,?,(empty=toggle)]
+param=$P$
+
+[W]
+keywords=gaming1
+command=$GAMINGTWICE$
+comment=Press Win twice for Executor [on,off,?,(empty=toggle)]
+
+[W]
+keywords=gaming2
+command=$GAMINGTWICESM$
+comment=Press Win twice for Start menu [on,off,?,(empty=toggle)]
+
+[W]
+keywords=gaming3
+command=$GAMINGWINOFF$
+comment=No Win press [on,off,?,(empty=toggle)]
+
+[W]
+keywords=showpinned
+command=$SHOWPINNED$
+comment=Toggle pinned items [on,off,?,(empty=toggle)]
+param=$P$
+hist=0
+
+[W]
+keywords=gamemode
+command=ms-settings:gaming-gamemode
+comment=Open gaming mode panel
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=151
+
+
+[W]
+keywords=?forceshutdown
+command=shutdown
+comment=Fast full cold shutdown windows, no hybrid sleep
+param=/s /f /t 0
+hist=0
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=27
+
+[W]
+keywords=?coldrestart
+command=shutdown.exe
+comment=Force restart windows cleanly with a full kernel reset
+param=/r /f /t 0
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=112
+
+[W]
+keywords=?coldrestartcontinue
+command=shutdown.exe
+comment=Full cold restart windows and relaunch registered apps
+param=/g /f /t 0
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=112
+
+[W]
+keywords=?restartexplorer
+command=cmd.exe
+open=3
+comment=Restart windows explorer process
+param=/c taskkill /f /im explorer.exe & start explorer.exe
+hist=0
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=147
+
+[W]
+keywords=?restartgraphics
+command=$KEYS$
+comment=Restart the graphics driver stack
+param=h17,h16,h91,p66,r17,r16,r91
+hist=0
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=93
+
+[W]
+keywords=?godmode
+command=shell:::{ED7BA470-8E54-465E-825C-99712043E01C}
+comment=Open the master windows management directory
+hist=0
+key=53
+keymod=6
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=14
+
+[W]
+keywords=?blackout
+command=powershell.exe
+comment=Instantly disable all network adapters (ethernet + wifi)
+param=-Command "Disable-NetAdapter -Name * -Confirm:$false"
+runas=1
+hist=0
+
+[W]
+keywords=?restorenet
+command=powershell.exe
+comment=Instantly enable all network adapters back online
+param=-Command "Enable-NetAdapter -Name * -Confirm:$false"
+runas=1
+hist=0
+
+[W]
+keywords=flushdns
+command=cmd.exe
+open=3
+comment=Flush the local dns resolver cache
+param=/c ipconfig /flushdns
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=135
+
+[W]
+keywords=actioncenter
+command=$KEYS$
+comment=Open windows action center
+param=h91,p65,r91
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=21
+
+[W]
+keywords=connectdevice
+command=$KEYS$
+comment=Open the Connect quick actions
+param=h91,p75,r91
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=9
+
+[W]
+keywords=present
+command=$KEYS$
+comment=Choose a presentation display mode
+param=h91,p80,r91
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=89
+
+[W]
+keywords=about
+command=ms-settings:about
+comment=Display the System Properties
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=232
+
+[W]
+keywords=dark
+command=powershell.exe
+comment=Toggle Windows dark/light mode
+param=-Command "if((Get-ItemProperty HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize).AppsUseLightTheme -eq 1){Set-ItemProperty HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0}else{Set-ItemProperty HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 1}"
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=174
+
+[W]
+keywords=uptime
+command=cmd.exe
+comment=Show system uptime
+param=/K net statistics workstation | findstr "since"
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=265
+
+[W]
+keywords=diskspace
+command=powershell.exe
+comment=Show disk usage for all drives
+param=-NoExit -Command "Get-PSDrive -PSProvider FileSystem | ForEach-Object { $vol = Get-Volume -DriveLetter $_.Name -ErrorAction SilentlyContinue; [PSCustomObject]@{ Drive=$_.Name; Label=$vol.FileSystemLabel; 'Used (GB)'=[math]::Round($_.Used/1GB,1); 'Free (GB)'=[math]::Round($_.Free/1GB,1); 'Total (GB)'=[math]::Round(($_.Used+$_.Free)/1GB,1) } } | Format-Table -AutoSize"
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=80
+
+[W]
+keywords=env
+command=rundll32.exe
+comment=Open environment variables editor
+param=sysdm.cpl,EditEnvironmentVariables
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=12
+
+[W]
+keywords=wt
+command=wt.exe
+comment=Open Windows Terminal with CMD at a folder path
+param=--profile "Command Prompt" --startingDirectory "$P$
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=34
+
+[W]
+keywords=wtps
+command=wt.exe
+comment=Open Windows Terminal with PowerShell at a folder path
+param=--profile "Windows PowerShell" --startingDirectory "$P$
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=34
+
+[W]
+keywords=wtu
+command=wt.exe
+comment=Open Windows Terminal with Ubuntu at a folder path
+param=--profile "Ubuntu" --startingDirectory "$P$
+iconpath=%SystemRoot%\System32\SHELL32.dll
+iconidx=34

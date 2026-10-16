@@ -1,0 +1,3 @@
+https://github.com/enthought/comtypes
+Release 1.1.7
+Slightly modified for Keypirinha (search for the [KP] tags)
