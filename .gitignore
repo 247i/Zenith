@@ -6,3 +6,10 @@
 /PortableApps/Launchy/plugins/icons/tasky
 /PortableApps/Asuite/cache
 /Apps
+/PortableApps/WinLaunch/Data/LinkCache
+/PortableApps/FlowLauncher/app-2.1.4/UserData/Cache
+*.bak
+/PortableApps/WinLaunch/Data/ICBackup
+/PortableApps/WinLaunch/Data
+/PortableApps/WinLaunch
+/PortableApps/FlowLauncher/app-2.1.4/UserData
