@@ -3,6 +3,7 @@ Rem முகப்பு_உரை
 git clone --depth 1 https://github.com/247i/.github
 git clone --depth 1 https://github.com/247i/01
 git clone --depth 1 https://github.com/247i/Auto
+Rem extract Node.zip
 git clone --depth 1 https://github.com/247i/BCPL
 Rem git clone --depth 1 https://github.com/247i/CAD
 git clone --depth 1 https://github.com/247i/CS.Net
@@ -26,8 +27,6 @@ Rem gh release download --repo "247i/Calibre" --pattern "*"
 Rem git clone --depth 1 https://github.com/247i/Paid
 git clone --depth 1 https://github.com/247i/Pixel
 Rem git clone --depth 1 https://github.com/247i/python-docs-ta
-git clone --depth 1 https://github.com/247i/Script
-Rem extract Node.zip
 Rem git clone --depth 1 https://github.com/247i/Serve
 Rem git clone --depth 1 https://github.com/247i/Telegram
 git clone --depth 1 https://github.com/247i/Tools
