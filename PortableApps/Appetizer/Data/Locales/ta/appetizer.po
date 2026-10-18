@@ -460,7 +460,7 @@ msgid "Please select the folder to import the shortcuts from."
 msgstr "Seleccione la carpeta desde la que importar los atajos."
 
 msgid "Please wait while your applications are being closed."
-msgstr "Espere mientras sus aplicaciones se cierran."
+msgstr "உங்கள் செயலிகள் மூடப்படும் வரை காத்திருக்கவும்."
 
 msgid "Please wait..."
 msgstr "தயவுசெய்து காத்திருக்கவும்..."
