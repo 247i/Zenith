@@ -527,32 +527,32 @@ msgid "Shift +"
 msgstr "Shift +"
 
 msgid "Shorcut Properties"
-msgstr "Propiedades del acceso directo"
+msgstr "குறுக்குவழி பண்புகள்"
 
 msgid "Show"
-msgstr "Mostrar"
+msgstr "காட்டு"
 
 msgid "Show Desktop"
-msgstr "Mostrar escritorio"
+msgstr "மேசைமேடையைக் காட்டு"
 
 msgid "Show taskbar icon"
-msgstr "Enseñar icono de barra de tareas"
+msgstr "பணிப்பட்டை சின்னத்தைக் காட்டு"
 
 msgid "Show tray icon"
-msgstr "Enseñar icono de bandeja"
+msgstr "அறிவிப்புப் பகுதி சின்னத்தைக் காட்டு"
 
 msgid "Skin:"
-msgstr "Skin:"
+msgstr "தோல்:"
 
 msgid "Small"
-msgstr "Pequeño"
+msgstr "சிறியது"
 
 msgid ""
 "Some of these changes will only be applied until after you restart the "
 "application."
 msgstr ""
-"Algunos de estos cambios no se aplicarán hasta después de reiniciar la "
-"aplicación."
+"இந்த மாற்றங்களில் சில, நீங்கள் செயலியை மறுதொடக்கம் செய்த "
+"பின்னரே நடைமுறைக்கு வரும்."
 
 msgid "Space"
 msgstr "இடைவெளி"
