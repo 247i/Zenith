@@ -463,17 +463,18 @@ msgid "Please wait while your applications are being closed."
 msgstr "Espere mientras sus aplicaciones se cierran."
 
 msgid "Please wait..."
-msgstr "Espere, por favor..."
+msgstr "தயவுசெய்து காத்திருக்கவும்..."
 
 msgid "Plugin"
-msgstr "Plugin"
+msgstr "சொருகி"
 
 msgid ""
 "Plugin script is not in the right format. Please encode it as UTF-8 NO BOM "
 "or ASCII. Applies to:"
 msgstr ""
-"La escritura del plugin no está en el formato correcto. Codifíquelo como "
-"UTF-8 NO BOM o ASCII. Se aplica a:"
+"சொருகி கைஉரை சரியான வடிவமைப்பில் இல்லை. தயவுசெய்து அதை "
+"UTF-8 NO BOM அல்லது ASCII குறியீட்டு முறையில் மாற்றவும். இது "
+"பின்வருவனவற்றிற்குப் பொருந்தும்:"
 
 msgid "Plugins"
 msgstr "சொருகிகள்"
