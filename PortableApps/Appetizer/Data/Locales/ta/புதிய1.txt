@@ -438,7 +438,7 @@ msgid "Please enable the plugin in order to change its options."
 msgstr "சொருகியை (plugin) மாற்றியமைக்க, அதைச் செயல்படுத்தவும்."
 
 msgid "Please select the folder to import the shortcuts from."
-msgstr "குறுக்குவழிகளை இறக்குமதி செய்ய வேண்டிய கோப்புறையைத் தேர்ந்தெடுக்கவும்."
+msgstr "குறுக்குவழிகளை இறக்குமதி செய்ய வேண்டிய கோப்புறையைத் தேர்ந்தெடு."
 
 msgid "Please wait while your applications are being closed."
 msgstr "உங்கள் செயலிகள் மூடப்படும் வரை காத்திருக்கவும்." msgid "Please wait..."
@@ -482,18 +482,3 @@ msgstr "தொடக்கத்தின் போது பல-செயல்
 
 msgid "Save"
 msgstr "சேமி (Save)"
-
-msgid "Search"
-msgstr "தேடு (Search)"msgstr "உலாவு"
-
-msgid "Select a file or a folder"
-msgstr "கோப்பு அல்லது கோப்புறையைத் தேர்ந்தெடுக்கவும்"
-
-msgid "Select a plugin package"
-msgstr "சொருகி (plugin) தொகுப்பைத் தேர்ந்தெடுக்கவும்"
-
-msgid "Select an icon"
-msgstr "சின்னத்தைத் தேர்ந்தெடுக்கவும்"
-
-msgid "Select an icon file or library"
-msgstr "சின்னக் கோப்பு அல்லது நூலகத்தைத் தேர்ந்தெடுக்கவும்"
