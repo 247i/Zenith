@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<Window version="1.0">
+    <DisplayIndex>0</DisplayIndex>
+    <IsLeftOfDisplay>1</IsLeftOfDisplay>
+    <IsTopOfDisplay>1</IsTopOfDisplay>
+    <Width>300</Width>
+    <Height>80</Height>
+    <HorizontalGap>423</HorizontalGap>
+    <VerticalGap>337</VerticalGap>
+</Window>
