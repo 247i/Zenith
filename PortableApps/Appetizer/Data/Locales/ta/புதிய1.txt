@@ -1,0 +1,589 @@
+
+msgstr ""
+"%s இப்போது சிஸ்டம் ட்ரேக்கு குறைக்கப்பட உள்ளது.\n"
+"\n"
+"%s' சாளரங்களில் ('%s' தாவல்) இந்த நடத்தையை நீங்கள் மாற்றலாம் என்பதை நினைவில் கொள்ளவும்"
+msgstr ""
+"%s está ahora minimizado en la barra de tareas.\n"
+"\n"
+"Puede cambiar esto en las ventanas de '%s' ('%s' tab)"
+
+msgstr "%s, பதிப்பு %s.%s.%s (உருவாக்கம் #%s)"
+msgstr "%s, பதிப்பு %s.%s.%s (உருவாக்க #%s)"
+
+msgstr "- CStdString by Joe O'Leary"
+msgstr "- CStdString, de Joe O'Leary"
+
+msgstr "- அந்தந்த பங்களிப்பாளர்களால் FreeType"
+msgstr "- FreeType, de sus தொடர்புடைய பங்களிப்புகள்"
+
+msgstr ""
+"- லூவா எழுதிய ராபர்டோ ஐருசலிம்ஸ்கி, லூயிஸ் ஹென்ரிக் டி ஃபிகியூரிடோ மற்றும் வால்டெமர் "
+"செல்ஸ்"
+msgstr ""
+"- Lua, de Roberto Ierusalimschy, Luiz Henrique de Figueiredo y Waldemar Celes"
+
+msgstr "- பிராடி தீஸ்ஃபீல்டின் சிம்ப்ளினி"
+msgstr "- Simpleini, de Brodie Thiesfield"
+
+msgstr "- டைனிஎக்ஸ்எம்எல் யவ்ஸ் பெர்குவின்"
+msgstr "- TinyXml, de Yves Berquin"
+
+msgstr "- பீட்டர் செலிங்கரின் ccrypt"
+msgstr "- ccrypt, de Peter Selinger"
+
+msgstr "- அந்தந்த ஆசிரியர்களால் wxWidgets"
+msgstr "- wxWidgets, de suus autores"
+
+msgstr "<இல்லை>"
+msgstr "<நாடா>"
+
+msgstr ""
+"Appetizer இன் புதிய பதிப்பு உள்ளது!\n"
+"\n"
+"உங்கள் பதிப்பு: %s\n"
+"புதிய பதிப்பு: %s\n"
+"வெளியீட்டு குறிப்புகள்: %s\n"
+"இப்போது பதிவிறக்கம் செய்ய விரும்புகிறீர்களா?"
+msgstr ""
+"¡Una nueva versión disponible!\n"
+"\n"
+"து பதிப்பு: %s\n"
+"நுவா பதிப்பு: %s\n"
+"நோட்டாஸ் டி லா பதிப்பு: %s\n"
+"\n"
+"¿தேசியா டெஸ்கார்கர்லா அஹோரா?"
+
+msgstr "இந்த பெயரில் ஒரு குறுக்குவழி ஏற்கனவே உள்ளது. நீங்கள் அதை மேலெழுத விரும்புகிறீர்களா?"
+msgstr "உன் அடாஜோ கான் எஸ்டே நோம்ப்ரே. ¿Desea sobreescribirlo?"
+
+msgstr "பற்றி"
+msgstr "அசெர்கா டி"
+
+msgstr "சுமார் %s..."
+msgstr "Acerca de %s..."
+
+msgstr "சிறப்பு உருப்படியைச் சேர்"
+msgstr "அக்ரெகர் உருப்படி சிறப்பு"
+
+msgstr "பல வெளியீட்டு குழுவில் சேர்"
+msgstr "அனாடிர் எ மல்டி-குருபோ டி லான்சாமியன்டோ"
+
+msgstr "அனைத்து கோப்புகளும்"
+msgstr "டோடோஸ் லாஸ் ஆர்கிவோஸ்"
+
+msgstr "அனைத்து ஆதரிக்கப்படும் கோப்புகளும்"
+msgstr "காப்பக ஆவணம்"
+
+msgstr "ஒரு நேரத்தில் %s இன் ஒரு நிகழ்வை மட்டும் அனுமதிக்கவும்"
+msgstr "%s எ லா வெஸ்ஸை வெளியேற்ற அனுமதி"
+
+msgstr "Alt +"
+msgstr "Alt +"
+
+msgstr "எப்போதும் மேலே"
+msgstr "சிம்ப்ரே தெரியும்"
+
+msgstr "தோற்றம்"
+msgstr "அபரியன்சியா"
+
+msgstr "ஒரு பயன்பாட்டை துவக்கிய பின் தானாக மறை"
+msgstr "ஆல்டர் ஆட்டோமேட்டிக் டெஸ்புஸ் டி லான்சார் லா அப்ளிகேசியன்"
+
+msgstr "கிடைக்கும் செருகுநிரல்கள்"
+msgstr "செருகுகள் டிஸ்போனிபிள்கள்"
+
+msgstr "பேக்ஸ்பேஸ்"
+msgstr "போரார்"
+
+msgstr "கீழே"
+msgstr "ஃபின்"
+
+msgstr ""
+"உங்கள் நீக்கக்கூடிய இயக்ககத்தில் தானியங்கு கோப்பை நிறுவுவதன் மூலம், %s தொடங்கும்"
+"உங்கள் டிரைவைச் செருகும்போது தானாகவே.\n"
+"\n"
+"நீங்கள் தொடர விரும்புகிறீர்களா?"
+msgstr ""
+"Al instalar el archivo de autoarranque en su unidad extraíble, %s comenzará"
+"automáticamente cuando se inserte la unidad.\n"
+"\n"
+"க்யூயர் கன்டினியர்?"
+
+msgstr "கால்குலேட்டர்"
+msgstr "கால்குலேடோரா"
+
+msgstr "'%s' கோப்பை உருவாக்க முடியாது"
+msgstr "நோ செ பியூடே கியர் எல் ஆர்க்கிவோ '%s'"
+
+msgstr "'%s' ஜிப் உள்ளீட்டைப் படிக்க முடியவில்லை"
+msgstr "நோ செ பியூடே லீர் எல் ஜிப் '%s'"
+
+msgstr "ரத்துசெய்"
+msgstr "ரத்து செய்"
+
+msgstr "ஐகானை மாற்று..."
+msgstr "கேம்பியர் ஐகானோ..."
+
+msgstr "புதுப்பிப்புக்காக சரிபார்க்கவும்"
+msgstr "உண்மையாக்குதலை சரிசெய்தல்"
+
+msgstr "மூடு"
+msgstr "செரார்"
+
+msgstr "மூடு பொத்தான் சிஸ்டம் ட்ரேக்கு குறைக்கிறது"
+msgstr "எல் போடோன் டி செரார் மினிமிசா எ லா பார்ரா டி டேரியாஸ்"
+
+msgstr "கட்டளை வரியில்"
+msgstr "லீனியா டி கமாண்டோஸ்"
+
+msgstr "உள்ளமைவு"
+msgstr "கட்டமைவு"
+
+msgstr "உறுதிப்படுத்தல்"
+msgstr "உறுதிப்படுத்துதல்"
+
+msgstr "தொடர்பு:"
+msgstr "தொடர்பு:"
+
+msgstr "கட்டுப்பாடு +"
+msgstr "கட்டுப்பாடு +"
+
+msgstr "கண்ட்ரோல் பேனல்"
+msgstr "கட்டுப்பாட்டு குழு"
+
+msgstr "பதிப்புரிமை © %s"
+msgstr "பதிப்புரிமை © %s"
+
+msgstr "புதுப்பிப்பு தகவலை பெற முடியவில்லை"
+msgstr "உண்மையான தகவல்களைப் பெற முடியாது"
+
+msgstr "இந்த குறுக்குவழியை இறக்குமதி செய்ய முடியவில்லை: %s"
+msgstr "இந்த அட்டஜோவை இறக்குமதி செய்ய முடியாது: %s"
+
+msgstr "உள்ளமையை துவக்க முடியவில்லை."
+msgstr "இனிசியர் இடியோமா இல்லை."
+
+msgstr "தானியங்கு கோப்பை நிறுவ முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
+msgstr ""
+"நோ சே ப்யூடே இன்ஸ்டாலர் எல் ஆர்க்கிவோ டி ஆட்டோஅரேன்க்யூ. பர் ஃபேவர் வுவல்வா எ "
+"இன்டென்டர்லோ."
+
+msgstr "%s ஐ திறக்க முடியவில்லை"
+msgstr "நோ சே புடோ அப்ரிர் %s"
+
+msgstr "வரவுகள்"
+msgstr "கடன்கள்"
+
+msgstr "தற்போதைய இயக்கி"
+msgstr "டிஸ்கோ உண்மையான"
+
+msgstr "இயல்புநிலை"
+msgstr "குறைபாடு"
+
+msgstr "நீக்கு"
+msgstr "சுப்ரிமிர்"
+
+msgstr "உரையாடல் பெட்டிகள் ஆல்பர்டோ கிரிஜியோவால் wxGlade ஐப் பயன்படுத்தி உருவாக்கப்படுகின்றன."
+msgstr ""
+"லாஸ் காஜாஸ் டி டயலோகோ ஹான் சிடோ கன்ஸ்ட்ரூயிடாஸ் உசாண்டோ wxGlade por Alberto Griggio."
+
+msgstr "முடக்கு"
+msgstr "டெசாக்டிவர்"
+
+msgstr "முடக்கப்பட்டது"
+msgstr "டெசாக்டிவாடோ"
+
+msgstr "பதிவுச் சாளரத்தைக் காட்டுகிறது (பிழைத்திருத்தத்திற்குப் பயன்படும்)"
+msgstr "மியூஸ்ட்ரா லா வென்டானா டி கோனெக்சியோன் (உடல் பாரா கிடார் ஃபாலோஸ்)"
+
+msgstr "இந்த உதவி செய்தியைக் காட்டுகிறது"
+msgstr "மியூஸ்ட்ரா இந்த மென்சஜே டி ஆயுடா"
+
+msgstr "டிரைவை வெளியேற்ற விரும்புகிறீர்களா?"msgstr "இயக்கியை (drive) வெளியேற்ற விரும்புகிறீர்களா?"
+
+msgid "இந்தச் சின்னத்தை நீக்க விரும்புகிறீர்களா?"
+msgstr "இந்தச் சின்னத்தை நீக்க விரும்புகிறீர்களா?" msgid "இந்தச் செய்தியை மீண்டும் காட்ட வேண்டாம்"
+msgstr "இந்தச் செய்தியை மீண்டும் காட்ட வேண்டாம்"
+
+msgid "கீழே"
+msgstr "கீழே"
+
+msgid "மேலும் செருகுநிரல்களைப் (plugins) பதிவிறக்கவும்"
+msgstr "மேலும் செருகுநிரல்களைப் (plugins) பதிவிறக்கவும்"
+
+msgid "மேலும் தோற்றங்களை (skins) பதிவிறக்கவும்"
+msgstr "மேலும் தோற்றங்களை (skins) பதிவிறக்கவும்"
+
+msgid "இயக்க நூலகங்கள் (Dynamic libraries)"
+msgstr "இயக்க நூலகங்கள் (Dynamic libraries)"
+
+msgid "இயக்கியை (drive) வெளியேற்றவும்"
+msgstr "இயக்கியை (drive) வெளியேற்றவும்"
+
+msgid "செயல்படுத்து"
+msgstr "செயல்படுத்து"
+
+msgid "செயல்படுத்தப்பட்டது"
+msgstr "செயல்படுத்தப்பட்டது"
+
+msgid "முடிவு"
+msgstr "முடிவு"
+
+msgid "பிழை"
+msgstr "பிழை"
+
+msgid "இணைய உலாவியைத் தொடங்குவதில் பிழை"
+msgstr "இணைய உலாவியைத் தொடங்குவதில் பிழை"
+
+msgid "Escape"
+msgstr "Escape"
+
+msgid "இறக்குமதிச் செயல்பாடுகளிலிருந்து இந்த உருப்படிகளைத் தவிர்க்கவும்"
+msgstr "இறக்குமதிச் செயல்பாடுகளிலிருந்து இந்த உருப்படிகளைத் தவிர்க்கவும்"
+
+id "இயக்கக்கூடிய கோப்புகள் (Executables)"
+msgstr "இயக்கக்கூடிய கோப்புகள் (Executables)"
+
+msgid "மிகப் பெரியது (XP மற்றும் அதற்கு மேல்)"
+msgstr "மிகப் பெரியது (XP மற்றும் அதற்கு மேல்)"
+
+msgid "பொது"
+msgstr "பொது"
+
+msgid "ஆதரவைப் பெறு"
+msgstr "ஆதரவைப் பெறு"
+
+msgid "குழு"
+msgstr "குழு"
+
+msgid "குழு பண்புகள்"
+msgstr "குழு பண்புகள்"
+
+msgid "உதவி"
+msgstr "உதவி"
+
+msgid "உதவித் தலைப்புகள்"
+msgstr "உதவித் தலைப்புகள்"
+
+msgid "மறைக்கப்பட்டது"
+msgstr "மறைக்கப்பட்டது"
+
+msgid "மறை"
+msgstr "மறை"
+
+msgid "முகப்பு"
+msgstr "முகப்பு"
+
+msgid "கிடைமட்ட"
+msgstr "கிடைமட்ட"
+
+msgid "பட்டியை மறைக்க/காட்ட குறுக்குவழி விசை (Hot key)"
+msgstr "பட்டியை மறைக்க/காட்ட குறுக்குவழி விசை (Hot key)"
+
+msgid "சின்னக் கோப்பு (Icon file) அல்லது நூலகம்:"
+msgstr "சின்னக் கோப்பு (Icon file) அல்லது நூலகம்:"
+
+msgid "சின்ன நூலகங்கள் (Icon libraries)"
+msgstr "சின்ன நூலகங்கள் (Icon libraries)"
+
+msgid "சின்னத்தின் அளவு:"
+msgstr "சின்னத்தின் அளவு:"
+
+msgid "ஐகான்:"
+msgstr "ஐகான்:"
+
+msgid "ஐகான்கள்"
+msgstr "ஐகான்கள்"
+
+msgid "இறக்குமதி"
+msgstr "இறக்குமதி"
+
+msgid "குறுக்குவழிகளை இறக்குமதி செய்"
+msgstr "குறுக்குவழிகளை இறக்குமதி செய்"
+
+msgid "குறுக்குவழிகள் இறக்குமதி செய்யப்படுகின்றன... தயவுசெய்து காத்திருக்கவும்."
+msgstr "குறுக்குவழிகள் இறக்குமதி செய்யப்படுகின்றன... தயவுசெய்து காத்திருக்கவும்."
+
+msgid "தகவல்"
+msgstr "தகவல்"
+
+msgid "Autorun கோப்பை நிறுவு"
+msgstr "Autorun கோப்பை நிறுவு"
+
+msgid "நிறுவு..."
+msgstr "நிறுவு..."
+
+msgid "மிகப்பெரியது (Vista மற்றும் அதற்கு மேல்)"
+msgstr "மிகப்பெரியது (Vista மற்றும் அதற்கு மேல்)"
+
+msgid "பெயரின் நிலை:"
+msgstr "பெயரின் நிலை:"
+
+msgid "மொழி:"
+msgstr "மொழி:"
+
+msgid "பெரியது"
+msgstr "பெரியது"
+
+msgid "இடது"
+msgstr "இடது"
+
+msgid "வேறு இடத்தைத் தேர்ந்தெடுக்க அனுமதிக்கவும்"
+msgstr "வேறு இடத்தைத் தேர்ந்தெடுக்க அனுமதிக்கவும்"
+
+msgid "உரிமம்"
+msgstr "உரிமம்"
+
+msgid "கிளை அமைப்பை (tree) ஏற்றுகிறது..."
+msgstr "கிளை அமைப்பை (tree) ஏற்றுகிறது..."
+
+msgid "இடம்:"
+msgstr "இடம்:"
+
+msgid "நடுத்தரம்"
+msgstr "நடுத்தரம்"
+
+msgid "Tray-க்குச் சுருக்கு"
+msgstr "Tray-க்குச் சுருக்கு"
+
+msgid "பலவற்றை ஒரே நேரத்தில் தொடங்குதல்"
+msgstr "பலவற்றை ஒரே நேரத்தில் தொடங்குதல்"
+
+msgid "எனது கணினி"
+msgstr "எனது கணினி"
+
+msgid "எனது பிணைய இடங்கள்"
+msgstr "எனது பிணைய இடங்கள்"
+
+msgid "பெயர்:"
+msgstr "பெயர்:"
+
+msgid "பிணைய இணைப்புகள்"
+msgstr "பிணைய இணைப்புகள்"
+
+msgid "புதிய குழு..."
+msgstr "புதிய குழு..."
+
+msgid "புதிய குறுக்குவழி..."
+msgstr "புதிய குறுக்குவழி..."
+
+msgid "Appetizer-ன் புதிய பதிப்பு"
+msgstr "Appetizer-ன் புதிய பதிப்பு"
+
+msgid "இல்லை"
+msgstr "இல்லை"
+
+msgid "Notepad"
+msgstr "Notepad"
+
+msgid "Numpad 0"
+msgstr "Numpad 0" 0"
+
+msgid "Numpad 1"
+msgstr "Numpad 1"
+
+msgid "Numpad 2"
+msgstr "Numpad 2"
+
+msgid "Numpad 3"
+msgstr "Numpad 3"
+
+msgid "Numpad 4"
+msgstr "Numpad 4"
+
+msgid "Numpad 5"
+msgstr "Numpad 5"
+
+msgid "Numpad 6"
+msgstr "Numpad 6"
+
+msgid "Numpad 7"
+msgstr "Numpad 7"
+
+msgid "Numpad 8"
+msgstr "Numpad 8"
+
+msgid "Numpad 9"
+msgstr "Numpad 9"
+
+msgid "OK"
+msgstr "சரி"
+
+msgid "Opacity:"
+msgstr "ஒளிபுகாத்தன்மை (Opacity):"
+
+msgid "Operations"
+msgstr "செயல்பாடுகள்"
+
+msgid "Options"
+msgstr "விருப்பங்கள்"
+
+msgid "Organize group shortcuts"
+msgstr "குழு குறுக்குவழிகளை ஒழுங்கமைக்கவும்"
+
+msgid "Organize shortcuts"
+msgstr "குறுக்குவழிகளை ஒழுங்கமைக்கவும்"
+
+msgid "Orientation:"
+msgstr "திசை அமைவு (Orientation):"
+
+msgid "Paint Brush"
+msgstr "தூரிகை (Paint Brush)"
+
+msgid "Parameters:"
+msgstr "அளருருக்கள் (Parameters):"
+
+msgid "Please enable the plugin in order to change its options."
+msgstr "சொருகியை (plugin) மாற்றியமைக்க, அதைச் செயல்படுத்தவும்."
+
+msgid "Please select the folder to import the shortcuts from."
+msgstr "குறுக்குவழிகளை இறக்குமதி செய்ய வேண்டிய கோப்புறையைத் தேர்ந்தெடுக்கவும்."
+
+msgid "Please wait while your applications are being closed."
+msgstr "உங்கள் செயலிகள் மூடப்படும் வரை காத்திருக்கவும்." msgid "Please wait..."
+msgstr "தயவுசெய்து காத்திருக்கவும்..."
+
+msgid "Plugin"
+msgstr "சொருகி (Plugin)"
+
+msgid ""
+"Plugin script is not in the right format. Please encode it as UTF-8 NO BOM "
+"or ASCII. Applies to:"
+msgstr ""
+"சொருகி ஸ்கிரிப்ட் சரியான வடிவமைப்பில் இல்லை. தயவுசெய்து அதை UTF-8 NO BOM அல்லது ASCII குறியீட்டு முறையில் மாற்றவும். இது பின்வருவனவற்றிற்குப் பொருந்தும்:"
+
+msgid "Plugins"
+msgstr "சொருகிகள் (Plugins)"
+
+msgid "Preferences"
+msgstr "விருப்பத்தேர்வுகள் (Preferences)"
+
+msgid "Printers and Faxes"
+msgstr "அச்சுப்பொறிகள் மற்றும் தொலைநகல் இயந்திரங்கள் (Printers and Faxes)"
+
+msgid "Properties"
+msgstr "பண்புகள் (Properties)"
+
+msgid "Recycle Bin"
+msgstr "மறுசுழற்சி தொட்டி (Recycle Bin)"
+
+msgid "Remove..."
+msgstr "நீக்கு..."
+
+msgid "Return"
+msgstr "திரும்பு (Return)"
+
+msgid "Right"
+msgstr "வலது (Right)"
+
+msgid "Run multi-launch group on startup"
+msgstr "தொடக்கத்தின் போது பல-செயல்பாட்டுக் குழுவை (multi-launch group) இயக்கவும்"
+
+msgid "Save"
+msgstr "சேமி (Save)"
+
+msgid "Search"
+msgstr "தேடு (Search)"msgstr "உலாவு"
+
+msgid "Select a file or a folder"
+msgstr "கோப்பு அல்லது கோப்புறையைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Select a plugin package"
+msgstr "சொருகி (plugin) தொகுப்பைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Select an icon"
+msgstr "சின்னத்தைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Select an icon file or library"
+msgstr "சின்னக் கோப்பு அல்லது நூலகத்தைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Sets user data path (-u will be ignored)"
+msgstr "பயனர் தரவுப் பாதையை அமைக்கிறது (-u புறக்கணிக்கப்படும்)"
+
+msgid "Shift +"
+msgstr "Shift +"
+
+msgid "Shorcut Properties"
+msgstr "குறுக்குவழி பண்புகள்"
+
+msgid "Show"
+msgstr "காட்டு"
+
+msgid "Show Desktop"
+msgstr "மேசைமேடையைக் காட்டு"
+
+msgid "Show taskbar icon"
+msgstr "பணிப்பட்டை சின்னத்தைக் காட்டு"
+
+msgid "Show tray icon"
+msgstr "அறிவிப்புப் பகுதி (tray) சின்னத்தைக் காட்டு"
+
+msgid "Skin:"
+msgstr "தோற்றம் (Skin):"
+
+msgid "Small"
+msgstr "சிறியது"
+
+msgid ""
+"Some of these changes will only be applied until after you restart the "
+"application."
+msgstr ""
+"இந்த மாற்றங்களில் சில, நீங்கள் செயலியை மறுதொடக்கம் செய்த பின்னரே நடைமுறைக்கு வரும்."
+
+msgid "Space"
+msgstr "இடைவெளி (Space)"
+
+msgid "Start >>"
+msgstr "தொடங்கு >>"
+
+msgid "Start Appetizer on system startup"
+msgstr "கணினியைத் தொடங்கும்போது Appetizer-ஐத் தொடங்கவும்"
+
+msgid "Status"
+msgstr "நிலை"
+
+msgid "Tab"
+msgstr "Tab"
+
+msgid "The autorun file has been installed successfully"
+msgstr "தானியங்கி இயக்கம் (autorun) கோப்பு வெற்றிகரமாக நிறுவப்பட்டது"
+
+msgid ""
+"The changes made to the plugins will only be active the next time %s is "
+"started."
+msgstr ""
+"சொருகிகளில் (plugins) செய்யப்பட்ட மாற்றங்கள், அடுத்த முறை %s தொடங்கப்படும்போது மட்டுமே நடைமுறைக்கு வரும்." "பிளगின்களில் செய்யப்படும் மாற்றங்கள், அடுத்த முறை %s தொடங்கப்படும்போதுதான் நடைமுறைக்கு வரும்."
+
+"குறிப்பிடப்பட்ட இடம் ஒரு கோப்பாகவோ, கோப்புறையாகவோ அல்லது URL-ஆகவோ இருக்கலாம்."
+
+"மல்டிலான்ச் (multilaunch) குழு தற்போது காலியாக உள்ளது. இந்த அம்சம் குறித்த உதவித் தலைப்பைப் பார்க்க விரும்புகிறீர்களா?"
+
+"பிளகின் வெற்றிகரமாக நிறுவப்பட்டது. அடுத்த முறை %s தொடங்கப்படும்போது அது செயல்படுத்தப்படும்."
+
+"குறுக்குவழி (shortcut) அமைந்திருக்கும் இடம் இல்லை. நீங்கள் தொடர விரும்புகிறீர்களா?"
+
+"ஹாட்கீயைப் (hotkey) பதிவு செய்வதில் பிழை ஏற்பட்டது. வேறொரு செயலி ஏற்கனவே அதைப் பதிவு செய்திருக்கலாம்." msgid "This file doesn't exist or has been deleted (Error %s)"
+msgstr "இந்தக் கோப்பு இல்லை அல்லது நீக்கப்பட்டுவிட்டது (பிழை %s)"
+
+msgid ""
+"This program is free software: you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation, either version 3 of the License, or any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License along with "
+"this program.  If not, see <http://www.gnu.org/licenses/>."
+msgstr ""
+"இந்த நிரல் ஒரு கட்டற்ற மென்பொருள் (free software) ஆகும். 'Free Software Foundation' வெளியிட்ட 'GNU General Public License' (பதிப்பு 3 அல்லது அதற்குப் பிந்தைய பதிப்பு) விதிகளின்படி, நீங்கள் இதை மீண்டும் விநியோகிக்கலாம் மற்றும்/அல்லது மாற்றியமைக்கலாம்.\n"
+"\n"
+"இந்த நிரல் பயனுள்ளதாக இருக்கும் என்ற நம்பிக்கையில் விநியோகிக்கப்படுகிறது, ஆனால் இதற்கு எவ்வித உத்தரவாதமும் (WARRANTY) வழங்கப்படவில்லை; வணிக ரீதியான பயன்பாட்டிற்கோ அல்லது குறிப்பிட்ட நோக்கத்திற்காகவோ இது பொருத்தமானது என்பதற்கான எந்தவொரு மறைமுக உத்தரவாதமும் இதில் இல்லை. கூடுதல் விவரங்களுக்கு 'GNU General Public License'-ஐப் பார்க்கவும்.\n"
+"\n"
+"இந்த நிரலுடன் 'GNU General Public License'-ன் நகல் உங்களுக்குக் கிடைத்திருக்க வேண்டும். அவ்வாறு கிடைக்கவில்லை எனில், <http://www.gnu.org/licenses/> என்ற இணையதளத்தைப் பார்க்கவும்."
+
+msgid "This skin is not compatible with the current version of %s."
+msgstr "இந்தத் தோற்றம் (skin), %s-ன் தற்போதைய பதிப்புடன் இணக்கமானது அல்ல." இந்த மென்பொருள் பல திறந்த மூல (open-source) நிரலகங்களைப் பயன்படுத்துகிறது, அவற்றுள் சில:
