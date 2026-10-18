@@ -479,52 +479,52 @@ msgid "Plugins"
 msgstr "Plugins"
 
 msgid "Preferences"
-msgstr "Preferencias"
+msgstr "விருப்பத்தேர்வுகள்"
 
 msgid "Printers and Faxes"
-msgstr "Impresoras y faxes"
+msgstr "அச்சுப்பொறிகள் மற்றும் தொலைநகல்கள்"
 
 msgid "Properties"
-msgstr "Propiedades"
+msgstr "பண்புகள்"
 
 msgid "Recycle Bin"
-msgstr "Papelera de reciclaje"
+msgstr "மறுசுழற்சி தொட்டி"
 
 msgid "Remove..."
-msgstr "Eliminar..."
+msgstr "நீக்கு..."
 
 msgid "Return"
-msgstr "Intro"
+msgstr "திரும்பு"
 
 msgid "Right"
-msgstr "Derecha"
+msgstr "வலது"
 
 msgid "Run multi-launch group on startup"
-msgstr "Ejecutar grupo de aplicaciones al arrancar"
+msgstr "தொடக்கத்தின் போது பல-செயல்பாட்டுக் குழுவை இயக்கவும்"
 
 msgid "Save"
-msgstr "Guardar"
+msgstr "சேமி"
 
 msgid "Search"
-msgstr "Buscar"
+msgstr "தேடு"
 
 msgid "Select a file or a folder"
-msgstr "Seleccione un archivo o carpeta"
+msgstr "கோப்பு அல்லது கோப்புறையைத் தேர்ந்தெடு"
 
 msgid "Select a plugin package"
-msgstr "Seleccione un paquete de plugin"
+msgstr "சொருகி தொகுப்பைத் தேர்ந்தெடு"
 
 msgid "Select an icon"
-msgstr "Seleccionar un icono"
+msgstr "சின்னத்தைத் தேர்ந்தெடு"
 
 msgid "Select an icon file or library"
-msgstr "Seleccione un icono o librería"
+msgstr "சின்னக் கோப்பு அல்லது நூலகத்தைத் தேர்ந்தெடு"
 
 msgid "Sets user data path (-u will be ignored)"
-msgstr "Establezca la ruta de datos de usuario (con \"-u\" sera ignorado)"
+msgstr "பயனர் தரவுப் பாதையை அமைக்கிறது (-u புறக்கணிக்கப்படும்)"
 
 msgid "Shift +"
-msgstr "Shift +"
+msgstr "உயர்த்து +"
 
 msgid "Shorcut Properties"
 msgstr "குறுக்குவழி பண்புகள்"
