@@ -16,7 +16,7 @@
     <Setting name="NextUpdateCheckTime">2026-10-19 22:24:02</Setting>
     <Setting name="OptionPanelOpen">0</Setting>
     <Setting name="PicturesPath">$(Drive)/படங்கள்</Setting>
-    <Setting name="PortableAppsPath">$(Drive)/PortableApps</Setting>
+    <Setting name="PortableAppsPath">$(Drive)/Apps</Setting>
     <Setting name="Rotated">0</Setting>
     <Setting name="RunMultiLaunchOnStartUp">0</Setting>
     <Setting name="ShowDeleteIconMessage">1</Setting>
