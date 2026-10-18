@@ -476,7 +476,7 @@ msgstr ""
 "UTF-8 NO BOM o ASCII. Se aplica a:"
 
 msgid "Plugins"
-msgstr "Plugins"
+msgstr "சொருகிகள்"
 
 msgid "Preferences"
 msgstr "விருப்பத்தேர்வுகள்"
