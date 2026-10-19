@@ -223,22 +223,22 @@ msgid "Do you wish to remove this icon?"
 msgstr "¿Desea eliminar este icono?"
 
 msgid "Don't show this message again"
-msgstr "No mostrar este mensaje de nuevo"
+msgstr "இந்தச் செய்தியை மீண்டும் காட்ட வேண்டாம்"
 
 msgid "Down"
-msgstr "Abajo"
+msgstr "கீழே"
 
 msgid "Download more plugins"
-msgstr "Descargar más plugins"
+msgstr "மேலும் செருகுநிரல்களைப் பதிவிறக்கு"
 
 msgid "Download more skins"
-msgstr "Descargar más skins"
+msgstr "மேலும் தோற்றங்களை பதிவிறக்கம்"
 
 msgid "Dynamic libraries"
-msgstr "Librerías dinámicas"
+msgstr "இயக்க நூலகங்கள்"
 
 msgid "Eject drive"
-msgstr "Expulsar la unidad"
+msgstr "இயக்கியை வெளியேற்று"
 
 msgid "Enable"
 msgstr "செயல்படுத்து"
