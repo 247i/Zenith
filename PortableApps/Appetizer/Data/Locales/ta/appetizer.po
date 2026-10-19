@@ -298,13 +298,13 @@ msgid "Horizontal"
 msgstr "Horizontal"
 
 msgid "Hot key to hide / show the bar"
-msgstr "Combinación de teclas para ocultar/mostrar la barra"
+msgstr "பட்டியை மறைக்க/காட்ட குறுக்குவழி விசை"
 
 msgid "Icon file or library:"
-msgstr "Archivo de icono o librería:"
+msgstr "சின்னக் கோப்பு அல்லது நூலகம்:"
 
 msgid "Icon libraries"
-msgstr "Librerías de iconos"
+msgstr "சின்ன நூலகங்கள்"
 
 msgid "Icon size:"
 msgstr "சின்னத்தின் அளவு:"
