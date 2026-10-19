@@ -178,12 +178,10 @@ msgid "Could not import this shortcut: %s"
 msgstr "No se pudo importar este atajo: %s"
 
 msgid "Could not initialize locale."
-msgstr "No se puede iniciar idioma."
+msgstr "உள்ளமையை துவக்க முடியவில்லை."
 
 msgid "Could not install autorun file. Please try again."
-msgstr ""
-"No se puede instalar el archivo de autoarranque. Por favor vuelva a "
-"intentarlo."
+msgstr "தானியங்கு கோப்பை நிறுவ முடியவில்லை. மீண்டும் முயற்சிக்கவும்."
 
 msgid "Could not open %s"
 msgstr "%s ஐ திறக்க முடியவில்லை"
