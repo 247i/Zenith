@@ -3,8 +3,8 @@
     <DisplayIndex>0</DisplayIndex>
     <IsLeftOfDisplay>1</IsLeftOfDisplay>
     <IsTopOfDisplay>1</IsTopOfDisplay>
-    <Width>300</Width>
-    <Height>80</Height>
-    <HorizontalGap>423</HorizontalGap>
-    <VerticalGap>337</VerticalGap>
+    <Width>1251</Width>
+    <Height>739</Height>
+    <HorizontalGap>0</HorizontalGap>
+    <VerticalGap>0</VerticalGap>
 </Window>
