@@ -74,46 +74,46 @@ msgid "A shortcut with this name already exists. Do you wish to overwrite it?"
 msgstr "Ya existe un atajo con este nombre. ¿Desea sobreescribirlo?"
 
 msgid "About"
-msgstr "Acerca de"
+msgstr "பற்றி"
 
 msgid "About %s..."
-msgstr "Acerca de %s..."
+msgstr "பற்றி %s..."
 
 msgid "Add special item"
-msgstr "Agregar item especial"
+msgstr "சிறப்பு உருப்படியைச் சேர்"
 
 msgid "Add to Multi Launch group"
-msgstr "Añadir a Multi-grupo de lanzamiento"
+msgstr "பல வெளியீட்டு குழுவில் சேர்"
 
 msgid "All files"
-msgstr "Todos los archivos"
+msgstr "அனைத்து கோப்புகளும்"
 
 msgid "All supported files"
-msgstr "Archivos soportados"
+msgstr "அனைத்து ஆதரிக்கப்படும் கோப்புகளும்"
 
 msgid "Allow only one instance of %s at a time"
-msgstr "Permitir sólo una ejecución de %s a la vez"
+msgstr "ஒரு நேரத்தில் %s இன் ஒரு நிகழ்வை மட்டும் அனுமதி"
 
 msgid "Alt +"
-msgstr "Alt +"
+msgstr "மாற்று +"
 
 msgid "Always on top"
-msgstr "Siempre visible"
+msgstr "எப்போதும் மேலே"
 
 msgid "Appearance"
-msgstr "Apariencia"
+msgstr "தோற்றம்"
 
 msgid "Auto-hide after launching an application"
-msgstr "Ocultar automáticamente después de lanzar la aplicación"
+msgstr "ஒரு பயன்பாட்டை துவக்கிய பின் தானாக மறை"
 
 msgid "Available plugins"
-msgstr "Plugins disponibles"
+msgstr "கிடைக்கும் செருகுநிரல்கள்"
 
 msgid "Backspace"
-msgstr "Borrar"
+msgstr "பின்வெளி"
 
 msgid "Bottom"
-msgstr "Fin"
+msgstr "கீழே"
 
 msgid ""
 "By installing the autorun file on your removable drive, %s will start "
@@ -121,61 +121,61 @@ msgid ""
 "\n"
 "Do you wish to continue?"
 msgstr ""
-"Al instalar el archivo de autoarranque en su unidad extraíble, %s comenzará "
-"automáticamente cuando se inserte la unidad.\n"
+"உங்கள் நீக்கக்கூடிய இயக்ககத்தில் தானியங்கு கோப்பை நிறுவுவதன் மூலம், %s தொடங்கும்"
+"உங்கள் டிரைவைச் செருகும்போது தானாகவே.\n"
 "\n"
-"¿Quiere continuar?"
+"நீங்கள் தொடர விரும்புகிறீர்களா?"
 
 msgid "Calculator"
-msgstr "Calculadora"
+msgstr "கால்குலேட்டர்"
 
 msgid "Can not create file '%s'"
-msgstr "No se puede crear el archivo '%s'"
+msgstr "'%s' கோப்பை உருவாக்க முடியாது"
 
 msgid "Can not read zip entry '%s'"
-msgstr "No se puede leer el zip '%s'"
+msgstr "'%s' சுருக்கு உள்ளீட்டைப் படிக்க முடியவில்லை"
 
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "கைவிடு"
 
 msgid "Change icon..."
-msgstr "Cambiar icono..."
+msgstr "சின்னத்தை மாற்று..."
 
 msgid "Check for update"
-msgstr "Comprobar actualización"
+msgstr "புதுப்பிப்புக்காக சரிபார்"
 
 msgid "Close"
-msgstr "Cerrar"
+msgstr "மூடு"
 
 msgid "Close button minimizes to System Tray"
-msgstr "El botón de cerrar minimiza a la barra de tareas"
+msgstr "மூடு பொத்தான் முறைமை தட்டுக்கு குறைக்கிறது"
 
 msgid "Command Prompt"
-msgstr "Línea de comandos"
+msgstr "கட்டளை வரி"
 
 msgid "Configuration"
-msgstr "Configuración"
+msgstr "உள்ளமைவு"
 
 msgid "Confirmation"
-msgstr "Confirmación"
+msgstr "உறுதிப்படுத்தல்"
 
 msgid "Contact:"
-msgstr "Contacto:"
+msgstr "தொடர்பு:"
 
 msgid "Control +"
-msgstr "Control +"
+msgstr "கட்டுப்பாட்டு +"
 
 msgid "Control Panel"
-msgstr "Panel de Control"
+msgstr "கட்டுப்பாட்டு பலகம்"
 
 msgid "Copyright © %s"
-msgstr "Copyright © %s"
+msgstr "பதிப்புரிமை © %s"
 
 msgid "Could not get update information"
-msgstr "No se puede obtener información de actualización"
+msgstr "புதுப்பிப்பு தகவலை பெற முடியவில்லை"
 
 msgid "Could not import this shortcut: %s"
-msgstr "No se pudo importar este atajo: %s"
+msgstr "இந்த குறுக்குவழியை இறக்குமதி செய்ய முடியவில்லை: %s"
 
 msgid "Could not initialize locale."
 msgstr "உள்ளமையை துவக்க முடியவில்லை."
