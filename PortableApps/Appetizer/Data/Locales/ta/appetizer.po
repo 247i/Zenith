@@ -186,41 +186,41 @@ msgstr ""
 "intentarlo."
 
 msgid "Could not open %s"
-msgstr "No se pudo abrir %s"
+msgstr "%s ஐ திறக்க முடியவில்லை"
 
 msgid "Credits"
-msgstr "Créditos"
+msgstr "வரவுகள்"
 
 msgid "Current Drive"
-msgstr "Disco actual"
+msgstr "தற்போதைய இயக்கி"
 
 msgid "Default"
-msgstr "Por defecto"
+msgstr "இயல்புநிலை"
 
 msgid "Delete"
-msgstr "Suprimir"
+msgstr "நீக்கு"
 
 msgid "Dialog boxes are built using wxGlade by Alberto Griggio."
 msgstr ""
-"Las cajas de diálogo han sido construidas usando wxGlade por Alberto Griggio."
+"உரையாடல் பெட்டிகள் ஆல்பர்டோ கிரிஜியோவால் wxGlade ஐப் பயன்படுத்தி உருவாக்கப்படுகின்றன."
 
 msgid "Disable"
-msgstr "Desactivar"
+msgstr "முடக்கு"
 
 msgid "Disabled"
-msgstr "Desactivado"
+msgstr "முடக்கப்பட்டது"
 
 msgid "Displays the log window (useful for debugging)"
-msgstr "Muestra la ventana de conexión (útil para quitar fallos)"
+msgstr "பதிவுச் சாளரத்தைக் காட்டுகிறது (பிழைத்திருத்தத்திற்குப் பயன்படும்)"
 
 msgid "Displays this help message"
-msgstr "Muestra este mensaje de ayuda"
+msgstr "இந்த உதவி செய்தியைக் காட்டுகிறது"
 
 msgid "Do you wish to eject the drive?"
-msgstr "¿Desea expulsar la unidad?"
+msgstr "இயக்கியை வெளியேற்ற விரும்புகிறீர்களா?"
 
 msgid "Do you wish to remove this icon?"
-msgstr "¿Desea eliminar este icono?"
+msgstr "இந்தச் சின்னத்தை நீக்க விரும்புகிறீர்களா?"
 
 msgid "Don't show this message again"
 msgstr "இந்தச் செய்தியை மீண்டும் காட்ட வேண்டாம்"
