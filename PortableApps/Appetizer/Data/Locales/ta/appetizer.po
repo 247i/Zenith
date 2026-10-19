@@ -307,157 +307,157 @@ msgid "Icon libraries"
 msgstr "Librerías de iconos"
 
 msgid "Icon size:"
-msgstr "Tamaño de los iconos:"
+msgstr "சின்னத்தின் அளவு:"
 
 msgid "Icon:"
-msgstr "Icono:"
+msgstr "சின்னம்
 
 msgid "Icons"
-msgstr "Iconos"
+msgstr "சின்னங்கள்"
 
 msgid "Import"
-msgstr "Importar"
+msgstr "இறக்குமதி"
 
 msgid "Import shortcuts"
-msgstr "Importar accesos directos"
+msgstr "குறுக்குவழிகளை இறக்குமதி செய்"
 
 msgid "Importing shortcuts... Please wait."
-msgstr "Importando accesos directos...Por favor espere."
+msgstr "குறுக்குவழிகள் இறக்குமதி செய்யப்படுகின்றன... தயவுசெய்து காத்திருக்கவும்."
 
 msgid "Information"
-msgstr "Información"
+msgstr "தகவல்"
 
 msgid "Install autorun file"
-msgstr "Instalar archivo de autoarranque"
+msgstr "தானிஇயக்கு கோப்பை நிறுவு"
 
 msgid "Install..."
-msgstr "Instalar..."
+msgstr "நிறுவு..."
 
 msgid "Jumbo (Vista and above)"
-msgstr "Jumbo (Vista y superior)"
+msgstr "மிகப்பெரியது (விச்டா மற்றும் அதற்கு மேல்)"
 
 msgid "Label position:"
-msgstr "Posición de la etiqueta"
+msgstr "பெயரின் நிலை"
 
 msgid "Language:"
-msgstr "Idioma:"
+msgstr "மொழி:"
 
 msgid "Large"
-msgstr "Grande"
+msgstr "பெரியது"
 
 msgid "Left"
-msgstr "Izquierda"
+msgstr "இடது"
 
 msgid "Let me select a different location"
-msgstr "Permítame seleccionar una localización diferente"
+msgstr "வேறு இடத்தைத் தேர்ந்தெடுக்க இசைவு"
 
 msgid "License"
-msgstr "Licencia"
+msgstr "உரிமம்"
 
 msgid "Loading tree..."
-msgstr "Cargando árbol..."
+msgstr "கிளை அமைப்பை ஏற்றுகிறது..."
 
 msgid "Location:"
-msgstr "Ruta:"
+msgstr "இடம்:"
 
 msgid "Medium"
-msgstr "Medio"
+msgstr "நடுத்தரம்"
 
 msgid "Minimize to tray"
-msgstr "Minimizar a la barra de tareas"
+msgstr "தட்டுக்குச் சுருக்கு"
 
 msgid "Multi-launch"
-msgstr "Multi-launch"
+msgstr "பல-தொடங்கு"
 
 msgid "My Computer"
-msgstr "Mi PC"
+msgstr "எனது கணினி"
 
 msgid "My Network Places"
-msgstr "Mis Sitios de red"
+msgstr "எனது பிணைய இடங்கள்"
 
 msgid "Name:"
-msgstr "Nombre:"
+msgstr "பெயர்:"
 
 msgid "Network Connections"
-msgstr "Conexiones de red"
+msgstr "பிணைய இணைப்புகள்"
 
 msgid "New group..."
-msgstr "Nuevo grupo..."
+msgstr "புதிய குழு..."
 
 msgid "New shortcut..."
-msgstr "Nuevo acceso directo..."
+msgstr "புதிய குறுக்குவழி..."
 
 msgid "New version of Appetizer"
-msgstr "Nueva versión de Appetizer"
+msgstr "Appetizer-ன் புதிய பதிப்பு"
 
 msgid "No"
-msgstr "No"
+msgstr "இல்லை"
 
 msgid "Notepad"
-msgstr "Bloc de notas"
+msgstr "குறிப்புஅட்டை"
 
 msgid "Numpad 0"
-msgstr "Teclado numérico 0"
+msgstr "எண்பலகை 0"
 
 msgid "Numpad 1"
-msgstr "Teclado numérico 1"
+msgstr "எண்பலகை 1"
 
 msgid "Numpad 2"
-msgstr "Teclado numérico 2"
+msgstr "எண்பலகை 2"
 
 msgid "Numpad 3"
-msgstr "Teclado numérico 3"
+msgstr "எண்பலகை 3"
 
 msgid "Numpad 4"
-msgstr "Teclado numérico 4"
+msgstr "எண்பலகை 4"
 
 msgid "Numpad 5"
-msgstr "Teclado numérico 5"
+msgstr "எண்பலகை 5"
 
 msgid "Numpad 6"
-msgstr "Teclado numérico 6"
+msgstr "எண்பலகை 6"
 
 msgid "Numpad 7"
-msgstr "Teclado numérico 7"
+msgstr "எண்பலகை 7"
 
 msgid "Numpad 8"
-msgstr "Teclado numérico 8"
+msgstr "எண்பலகை 8"
 
 msgid "Numpad 9"
-msgstr "Teclado numérico 9"
+msgstr "எண்பலகை 9"
 
 msgid "OK"
-msgstr "OK"
+msgstr "சரி"
 
 msgid "Opacity:"
-msgstr "Opacidad:"
+msgstr "ஒளிபுகாத்தன்மை:"
 
 msgid "Operations"
-msgstr "Operaciones"
+msgstr "செயல்பாடுகள்"
 
 msgid "Options"
-msgstr "Opciones"
+msgstr "விருப்பங்கள்"
 
 msgid "Organize group shortcuts"
-msgstr "Organizar grupo de accesos directos"
+msgstr "குழு குறுக்குவழிகளை ஒழுங்கமை"
 
 msgid "Organize shortcuts"
-msgstr "Organizar accesos directos"
+msgstr "குறுக்குவழிகளை ஒழுங்கமை"
 
 msgid "Orientation:"
-msgstr "Orientación:"
+msgstr "திசை அமைவு:"
 
 msgid "Paint Brush"
-msgstr "Paint"
+msgstr "தூரிகை"
 
 msgid "Parameters:"
-msgstr "Parámetros:"
+msgstr "அளருருக்கள்:"
 
 msgid "Please enable the plugin in order to change its options."
-msgstr "Active los plugins para cambiar sus opciones."
+msgstr "சொருகியை மாற்றியமைக்க, அதைச் செயல்படுத்தவும்."
 
 msgid "Please select the folder to import the shortcuts from."
-msgstr "Seleccione la carpeta desde la que importar los atajos."
+msgstr "குறுக்குவழிகளை இறக்குமதி செய்ய வேண்டிய கோப்புறையைத் தேர்ந்தெடு."
 
 msgid "Please wait while your applications are being closed."
 msgstr "உங்கள் செயலிகள் மூடப்படும் வரை காத்திருக்கவும்."
