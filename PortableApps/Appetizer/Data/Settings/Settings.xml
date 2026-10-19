@@ -8,13 +8,13 @@
     <Setting name="HotKeyControl">0</Setting>
     <Setting name="HotKeyKey">0</Setting>
     <Setting name="HotKeyShift">0</Setting>
-    <Setting name="IconLabelPosition">hidden</Setting>
-    <Setting name="IconSize">32</Setting>
+    <Setting name="IconLabelPosition">bottom</Setting>
+    <Setting name="IconSize">16</Setting>
     <Setting name="Locale">ta</Setting>
     <Setting name="MinimizeOnClose">1</Setting>
     <Setting name="MusicPath">$(Drive)/இசை</Setting>
     <Setting name="NextUpdateCheckTime">2026-10-22 03:02:05</Setting>
-    <Setting name="OptionPanelOpen">1</Setting>
+    <Setting name="OptionPanelOpen">0</Setting>
     <Setting name="PicturesPath">$(Drive)/படங்கள்</Setting>
     <Setting name="PortableAppsPath">$(Drive)/Apps</Setting>
     <Setting name="Rotated">0</Setting>
