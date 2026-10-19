@@ -241,61 +241,61 @@ msgid "Eject drive"
 msgstr "Expulsar la unidad"
 
 msgid "Enable"
-msgstr "Activar"
+msgstr "செயல்படுத்து"
 
 msgid "Enabled"
-msgstr "Activado"
+msgstr "செயல்படுத்தப்பட்டது"
 
 msgid "End"
-msgstr "Fin"
+msgstr "முடிவு"
 
 msgid "Error"
-msgstr "Error"
+msgstr "பிழை"
 
 msgid "Error launching web browser"
-msgstr "Error ejecutando el navegador web"
+msgstr "இணைய உலாவியைத் தொடங்குவதில் பிழை"
 
 msgid "Escape"
-msgstr "Esc"
+msgstr "தப்பி"
 
 msgid "Exclude these items from import operations"
-msgstr "Excluir estos items de las operaciones de importación"
+msgstr "இறக்குமதிச் செயல்பாடுகளிலிருந்து இந்த உருப்படிகளைத் தவிர்"
 
 msgid "Executables"
-msgstr "Ejecutables"
+msgstr "இயக்கக்கூடிய கோப்புகள்"
 
 msgid "Extra Large (XP and above)"
-msgstr "Extra Grande (XP y superior)"
+msgstr "மிகப் பெரியது (XP மற்றும் அதற்கு மேல்)"
 
 msgid "General"
-msgstr "General"
+msgstr "பொது"
 
 msgid "Get Support"
-msgstr "Obtener ayuda"
+msgstr "ஆதரவைப் பெறு"
 
 msgid "Group"
-msgstr "Grupo"
+msgstr "குழு"
 
 msgid "Group Properties"
-msgstr "Propiedades del grupo"
+msgstr "குழு பண்புகள்"
 
 msgid "Help"
-msgstr "Ayuda"
+msgstr "உதவி"
 
 msgid "Help Topics"
-msgstr "Temas de ayuda "
+msgstr "உதவித் தலைப்புகள்"
 
 msgid "Hidden"
-msgstr "Oculto"
+msgstr "மறைக்கப்பட்டது"
 
 msgid "Hide"
-msgstr "Ocultar"
+msgstr "மறை"
 
 msgid "Home"
-msgstr "Inicio"
+msgstr "முகப்பு"
 
 msgid "Horizontal"
-msgstr "Horizontal"
+msgstr "கிடைமட்டம்"
 
 msgid "Hot key to hide / show the bar"
 msgstr "பட்டியை மறைக்க/காட்ட குறுக்குவழி விசை"
