@@ -39,6 +39,7 @@ $userEntries = [ordered]@{
     'Keypirinha'     = '"%Zenith%\PortableApps\Keypirinha\keypirinha.exe" --autorun'
     'RocketDock'     = '"%Zenith%\PortableApps\RocketDock\RocketDock.exe"'
     'Expanso'        = '"%Zenith%\Apps\Edit\Abbrv\Espanso\START_ESPANSO.bat"'
+    'Texter'         = '"%Zenith%\Apps\Edit\Abbrv\Texter\Texter.exe"'
     'Workrave'       = '"%Zenith%\Apps\Tools\WorkRave\lib\workrave.exe"'
     'WinLaunch'      = '"%Zenith%\PortableApps\WinLaunch\WinLaunch.exe" -hide'
 }
