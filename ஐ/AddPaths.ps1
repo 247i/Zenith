@@ -2,6 +2,7 @@
 $PathsToAdd = @(
     (Join-Path $env:Zenith 'Apps\.github\Git.Ext\Git\bin')
     (Join-Path $env:Zenith 'Apps\.github\Gource')
+    (Join-Path $env:Zenith 'Apps\.github\KDiff3\bin')
 )
 
 # Get the existing user PATH
