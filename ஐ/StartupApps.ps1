@@ -29,6 +29,7 @@ $machineEntries = [ordered]@{
 
 # Current-user startup entries.
 $userEntries = [ordered]@{
+    'Artha'          = '"%Zenith%\Apps\Edit\Artha\Artha.bat"'
     'BgKural'        = '"%Zenith%\Apps\Tools\BGKural\Bgkural.bat"'
     'DesktopTicker'  = '"%Zenith%\Apps\Media\DesktopTicker\DesktopTicker.exe"'
     'DiCom'          = '"%Zenith%\Apps\Edit\Abbrv\DiCom\DiCom.exe"'
