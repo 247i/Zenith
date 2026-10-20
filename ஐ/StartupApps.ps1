@@ -24,7 +24,7 @@ New-Item -Path $hklmRun -Force | Out-Null
 
 # Machine-wide startup entry.
 $machineEntries = [ordered]@{
-    'Everything' = '"%Zenith%\Apps\Find\Everything\everything64.exe" -startup'
+    'Everything' = '"%Zenith%\Apps\Find\Everything\Everything.exe" -startup'
 }
 
 # Current-user startup entries.
