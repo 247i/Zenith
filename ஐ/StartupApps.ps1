@@ -30,13 +30,15 @@ $machineEntries = [ordered]@{
 # Current-user startup entries.
 $userEntries = [ordered]@{
     'BgKural'        = '"%Zenith%\Apps\Tools\BGKural\Bgkural.bat"'
-    'Desktop Ticker' = '"%Zenith%\Apps\Media\DesktopTicker\DesktopTicker.exe"'
+    'DesktopTicker'  = '"%Zenith%\Apps\Media\DesktopTicker\DesktopTicker.exe"'
+    'DiCom'          = '"%Zenith%\Apps\Edit\Abbrv\DiCom.exe"'
     'Ditto'          = '"%Zenith%\Apps\Edit\Ditto\Ditto.exe"'
     'Executor'       = '"%Zenith%\PortableApps\Executor\Executor.exe" -s'
     'Flow.Launcher'  = '"%Zenith%\PortableApps\FlowLauncher\app-2.1.4\Flow.Launcher.exe"'
     'IniyaTamil'     = '"%Zenith%\Apps\Tools\Keyboard\IniyaTamil\IniyaTamil.exe"'
     'Keypirinha'     = '"%Zenith%\PortableApps\Keypirinha\keypirinha.exe" --autorun'
     'RocketDock'     = '"%Zenith%\PortableApps\RocketDock\RocketDock.exe"'
+    'Expanso'        = '"%Zenith%\Apps\Edit\Abbrv\Espanso\START_ESPANSO.bat"'
     'Workrave'       = '"%Zenith%\Apps\Tools\WorkRave\lib\workrave.exe"'
     'WinLaunch'      = '"%Zenith%\PortableApps\WinLaunch\WinLaunch.exe" -hide'
 }
