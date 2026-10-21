@@ -33,6 +33,7 @@ $userEntries = [ordered]@{
     'Beeftext'       = '"%Zenith%\Apps\Edit\Beeftext\Beeftext.exe"'
     'BgKural'        = '"%Zenith%\Apps\Tools\BGKural\Bgkural.bat"'
     'DesktopTicker'  = '"%Zenith%\Apps\Media\DesktopTicker\DesktopTicker.exe"'
+    'DesktopTicker'  = '"%Zenith%\Apps\Media\RadioSure\RadioSure.exe /hidden'
     'DiCom'          = '"%Zenith%\Apps\Edit\Abbrv\DiCom\DiCom.exe"'
     'Ditto'          = '"%Zenith%\Apps\Edit\Ditto\Ditto.exe"'
     'IniyaTamil'     = '"%Zenith%\Apps\Tools\Keyboard\IniyaTamil\IniyaTamil.exe"'
