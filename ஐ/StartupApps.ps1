@@ -34,7 +34,6 @@ $userEntries = [ordered]@{
     'DiCom'          = '"%Zenith%\Apps\Edit\Abbrv\DiCom\DiCom.exe"'
     'Ditto'          = '"%Zenith%\Apps\Edit\Ditto\Ditto.exe"'
     'Kate'           = '"%Zenith%\Apps\Edit\Kate\Kate.lnk" --autorun'
-    'PSPad'          = '"%Zenith%\Apps\Edit\PSPad\PSPad.exe"'
     'Expanso'        = '"%Zenith%\Apps\Edit\Abbrv\Espanso\START_ESPANSO.bat"'
     'Texter'         = '"%Zenith%\Apps\Edit\Abbrv\Texter\Texter.exe"'
     'DesktopTicker'  = '"%Zenith%\Apps\Media\DesktopTicker\DesktopTicker.exe"'
