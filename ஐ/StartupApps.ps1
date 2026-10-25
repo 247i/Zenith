@@ -25,15 +25,28 @@ New-Item -Path $hklmRun -Force | Out-Null
 # Machine-wide startup entry.
 $machineEntries = [ordered]@{
     'Everything' = '"%Zenith%\Apps\Find\Everything\Everything.exe" -startup'
+
 }
 
 # Current-user startup entries.
 $userEntries = [ordered]@{
-    'Artha'          = '"%Zenith%\Apps\Edit\Artha\Artha.bat"'
-    'Beeftext'       = '"%Zenith%\Apps\Edit\Beeftext\Beeftext.exe"'
+
+    'Ditto'          = '"%Zenith%\Apps\Edit\Ditto\Ditto.exe"'
+    'DesktopTicker'  = '"%Zenith%\Apps\Media\DesktopTicker\DesktopTicker.exe"'
+    'Radiosure'      = '"%Zenith%\Apps\Media\RadioSure\RadioSure.exe"'
+    'BgKural'        = '"%Zenith%\Apps\Tools\BGKural\Bgkural.bat"'
+    'IniyaTamil'     = '"%Zenith%\Apps\Tools\Keyboard\IniyaTamil\IniyaTamil.exe"'
+    'Workrave'       = '"%Zenith%\Apps\Tools\WorkRave\lib\workrave.exe"'
+    'RocketDock'     = '"%Zenith%\PortableApps\RocketDock\RocketDock.exe"'
+    'WinLaunch'      = '"%Zenith%\PortableApps\WinLaunch\WinLaunch.exe" -hide'
+	'DiCom'          = '"%Zenith%\Apps\Edit\Abbrv\DiCom\DiCom.exe"'	
+}
+
+# Backup startup entries.
+$backupEntries = [ordered]@{
+    'Beeftext'       = '"%Zenith%\Apps\Edit\Abbrv\Beeftext\Beeftext.exe"'
     'DiCom'          = '"%Zenith%\Apps\Edit\Abbrv\DiCom\DiCom.exe"'
     'Ditto'          = '"%Zenith%\Apps\Edit\Ditto\Ditto.exe"'
-    'Kate'           = '"%Zenith%\Apps\Edit\Kate\Kate.lnk" --autorun'
     'Expanso'        = '"%Zenith%\Apps\Edit\Abbrv\Espanso\START_ESPANSO.bat"'
     'Texter'         = '"%Zenith%\Apps\Edit\Abbrv\Texter\Texter.exe"'
     'DesktopTicker'  = '"%Zenith%\Apps\Media\DesktopTicker\DesktopTicker.exe"'
