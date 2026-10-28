@@ -26,6 +26,7 @@ git clone --depth 1 https://github.com/247i/Office
 Rem gh release download --repo "247i/Calibre" --pattern "*"
 Rem git clone --depth 1 https://github.com/247i/Paid
 git clone --depth 1 https://github.com/247i/Pixel
+rem extract pixel\srceentogif
 Rem git clone --depth 1 https://github.com/247i/python-docs-ta
 Rem git clone --depth 1 https://github.com/247i/Serve
 Rem git clone --depth 1 https://github.com/247i/Telegram
