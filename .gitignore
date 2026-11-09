@@ -3,7 +3,6 @@
 *.sqbck
 *.sqlite
 *.log.*
-*.bak
 /Apps
 /PortableApps/Launchy/plugins/icons/tasky
 /PortableApps/Asuite/cache
